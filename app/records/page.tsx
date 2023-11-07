@@ -1,5 +1,6 @@
-"use client";
+'use client'
 import React, { useState } from "react";
+import Link from "next/link";
 
 interface Employee {
   id: number;
@@ -16,38 +17,23 @@ export default function RecordsPage() {
       name: "Baxter Baxter",
       position: "Engineer",
       department: "Engineering",
-      description:
-        "Baxter Baxter is an experienced engineer with a focus on problem-solving skills.",
+      description: "Baxter Baxter is an experienced engineer with a focus on problem-solving skills.",
     },
     {
       id: 2,
       name: "Bridget Baskket",
       position: "CMO",
       department: "Medical",
-      description:
-        "Bridget Baskket is the Chief Medical Officer and leads initiatives in the medical field.",
+      description: "Bridget Baskket is the Chief Medical Officer and leads initiatives in the medical field.",
     },
     {
       id: 3,
       name: "Click now for honks",
       position: "Clown",
       department: "Service",
-      description:
-        "Click now for honks is a professional clown who brings joy and laughter to various events and parties.",
+      description: "Click now for honks is a professional clown who brings joy and laughter to various events and parties.",
     },
   ]);
-
-  const [selectedEmployee, setSelectedEmployee] = useState<Employee | null>(
-    null
-  );
-
-  const openDescriptionModal = (employee: Employee) => {
-    setSelectedEmployee(employee);
-  };
-
-  const closeDescriptionModal = () => {
-    setSelectedEmployee(null);
-  };
 
   return (
     <main className="flex flex-col items-center justify-center text-center">
@@ -64,9 +50,9 @@ export default function RecordsPage() {
           {employees.map((employee) => (
             <tr key={employee.id}>
               <td>
-                <button onClick={() => openDescriptionModal(employee)}>
-                  {employee.name}
-                </button>
+                <Link href={`/records/employees/${employee.name}`}>
+                  <p>{employee.name}</p>
+                </Link>
               </td>
               <td>{employee.position}</td>
               <td>{employee.department}</td>
@@ -74,18 +60,6 @@ export default function RecordsPage() {
           ))}
         </tbody>
       </table>
-
-      {selectedEmployee && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={closeDescriptionModal}>
-              &times;
-            </span>
-            <h2>{selectedEmployee.name}</h2>
-            <p>{selectedEmployee.description}</p>
-          </div>
-        </div>
-      )}
     </main>
   );
 }
