@@ -25,7 +25,7 @@ export default function LoginPage() {
     <main className="flex flex-col items-center justify-center text-center">
       <h1 className="p-5">NanoTrasen Records</h1>
       <Image
-        src="/Nanotrasen_Logo.png" // public directory
+        src="/Nanotrasen_logo.png" // public directory
         alt="NanoTrasen Logo"
         width={100}
         height={100}
