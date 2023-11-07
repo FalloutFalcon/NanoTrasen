@@ -5,5 +5,5 @@ export default function EmployeeDetailPage({ params }: { params: { slug: string 
     <p>Nantrason</p>
     <h2>Title</h2>
     <p>CEO of Nanotrason</p>
-    <p>This guy has SEXXXX</p></main>
+    <p>latin or something</p></main>
 }
