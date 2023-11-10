@@ -2,14 +2,16 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-import { getEmployeesData } from "./employeeData"; // Update the path accordingly
+import { getEmployeesData } from "./employeeData";
+
+type EmployeeKey = "id" | "name" | "position" | "department" | "affiliation";
 
 export default function RecordsPage() {
   const initialEmployees = getEmployeesData();
   const [employees, setEmployees] = useState(initialEmployees);
-  const [sortConfig, setSortConfig] = useState({ key: null, direction: null });
+  const [sortConfig, setSortConfig] = useState<{ key: EmployeeKey | null; direction: "asc" | "desc" | null }>({ key: null, direction: null });
 
-  const handleSort = (key) => {
+  const handleSort = (key: EmployeeKey) => {
     let direction = "asc";
     if (sortConfig.key === key && sortConfig.direction === "asc") {
       direction = "desc";
@@ -24,13 +26,17 @@ export default function RecordsPage() {
 
     setEmployees(sortedEmployees);
   };
-
   return (
     <main className="flex flex-col items-center justify-center text-center p-5 w-4/5 m-auto">
       <h1 className="p-5">Evidenzkompanien Records</h1>
-      <table className="border border-slate-500 w-3/5">
+      <table className="border border-slate-500 w-4/5">
         <thead>
           <tr>
+            <SortableHeader
+              label="ID"
+              sortConfig={sortConfig}
+              onSort={() => handleSort("id")}
+            />
             <SortableHeader
               label="Name"
               sortConfig={sortConfig}
@@ -46,11 +52,17 @@ export default function RecordsPage() {
               sortConfig={sortConfig}
               onSort={() => handleSort("department")}
             />
+            <SortableHeader
+              label="Affiliation"
+              sortConfig={sortConfig}
+              onSort={() => handleSort("affiliation")}
+            />
           </tr>
         </thead>
         <tbody>
           {employees.map((employee) => (
             <tr key={employee.id}>
+              <td className="border border-slate-500">{employee.id}</td>
               <td className="border border-slate-500 hover:text-cyan-400">
                 <Link href={`/REDACTED/${employee.id}`}>
                   <p>{employee.name}</p>
@@ -58,6 +70,7 @@ export default function RecordsPage() {
               </td>
               <td className="border border-slate-500">{employee.position}</td>
               <td className="border border-slate-500">{employee.department}</td>
+              <td className="border border-slate-500">{employee.affiliation}</td>
             </tr>
           ))}
         </tbody>
