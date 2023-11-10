@@ -21,12 +21,8 @@ export default function EmployeeDetailPage({
     { label: "Faction Affiliation", value: employee.affiliation },
     { label: "Title", value: employee.position },
     {
-      label: "Age, Gender, Species",
-      value: `${employee.age}, ${employee.gender}, ${employee.species}`,
-    },
-    {
-      label: "Height & Weight",
-      value: `${employee.height}, ${employee.weight}`,
+      label: "Age, Gender, Species, Height & Weight",
+      value: `${employee.age}, ${employee.gender}, ${employee.species}, ${employee.height}, ${employee.weight}`,
     },
     { label: "Summary", value: employee.description },
   ];

@@ -9,8 +9,8 @@ export function getEmployeesData() {
       age: 31,
       gender: "Female",
       species: "Human",
-      height: "5'3\"",
-      weight: "107 lbs",
+      height: "160 cm",
+      weight: "48.5 kg",
       description: `
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.
@@ -26,8 +26,8 @@ export function getEmployeesData() {
       age: 28,
       gender: "Male",
       species: "Human",
-      height: "5'10\"",
-      weight: "160 lbs",
+      height: "178 cm",
+      weight: "72.5 kg",
       description: `
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.
@@ -43,8 +43,8 @@ export function getEmployeesData() {
       age: 25,
       gender: "Female",
       species: "Human",
-      height: "5'8\"",
-      weight: "150 lbs",
+      height: "173 cm",
+      weight: "68 kg",
       description: `
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.
@@ -60,8 +60,8 @@ export function getEmployeesData() {
       age: 30,
       gender: "Male",
       species: "Human",
-      height: "6'0\"",
-      weight: "180 lbs",
+      height: "183 cm",
+      weight: "81.5 kg",
       description: `
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.
@@ -72,13 +72,13 @@ export function getEmployeesData() {
       id: 987123456,
       name: "Maria Rodriguez",
       department: "Medical",
-      position: "Nurse",
+      position: "Doctor",
       affiliation: "Nanotransen",
       age: 27,
       gender: "Female",
       species: "Human",
-      height: "5'5\"",
-      weight: "140 lbs",
+      height: "165 cm",
+      weight: "63.5 kg",
       description: `
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.
@@ -94,8 +94,8 @@ export function getEmployeesData() {
       age: 35,
       gender: "Male",
       species: "Human",
-      height: "6'2\"",
-      weight: "200 lbs",
+      height: "188 cm",
+      weight: "90.5 kg",
       description: `
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.
@@ -110,9 +110,9 @@ export function getEmployeesData() {
       affiliation: "Nanotransen",
       age: 29,
       gender: "Non-binary",
-      species: "Xenophilic Human",
-      height: "5'9\"",
-      weight: "160 lbs",
+      species: "Moff",
+      height: "175 cm",
+      weight: "72.5 kg",
       description: `
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.
