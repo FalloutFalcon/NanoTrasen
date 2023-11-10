@@ -2,19 +2,22 @@ export function getMarksData() {
   const marks = [
     {
       // put "Unknown" for any fields you don't know or have not decided on
-      id: 123456789, // 9 digits
-      name: "(not lore accurate c:) Baxter Baxter",
-      department: "Engineering",
-      position: "Engineer",
-      affiliation: "Nanotransen",
+      id: 692697957, // 9 digits https://numbergenerator.org/random-9-digit-number-generator
+      name: "Baxter Baxter",
+      department: "Command",
+      position: "Montange",
+      // CMM Inteq Nanotrasen SRM SolGov Syndicate 
+      affiliation: "SRM",
+      // Custom names instead of maps prefered
+      currentShip: "NTV Solgov 1",
       age: 31,
       // Male Female Non-binary anything else
       gender: "Female",
-      // use the name listed on the website
+      // Elzuose Human IPC Kepori Moth Phorid Rachnid Sarathi Vox 
       species: "Human",
       // both of these have conversion to freedom units in site
-      height: "160 cm",
-      weight: "48.5 kg",
+      height: "165 cm",
+      weight: "49.5 kg",
       // support any html and you can use tailwind classes if you know them
       // keep in mind this is a description of the character from a solgov spy agency
       description: `
