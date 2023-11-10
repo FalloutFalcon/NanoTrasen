@@ -4,33 +4,38 @@ export function getMarksData() {
       // put "Unknown" for any fields you don't know or have not decided on
       id: 692697957, // 9 digits https://numbergenerator.org/random-9-digit-number-generator
       name: "Baxter Baxter",
-      department: "Command",
-      position: "Montange",
-      // CMM Inteq Nanotrasen SRM SolGov Syndicate 
+      // CMM Inteq Nanotrasen SRM SolGov Syndicate
       affiliation: "SRM",
       // Custom names instead of maps prefered
       currentShip: "Unknown",
+      department: "Command",
+      position: "Montange",
       age: 31,
+      dob: "Unknown",
+      // Elzuose Human IPC Kepori Moth Phorid Rachnid Sarathi Vox
+      species: "Human",
       // Male Female Non-binary anything else
       gender: "Female",
-      // Elzuose Human IPC Kepori Moth Phorid Rachnid Sarathi Vox 
-      species: "Human",
+      // Single Married Divorced Widowed
+      relationship: "Single",
       // both of these have conversion to freedom units in site
       height: "165 cm",
       weight: "49.5 kg",
       // support any html and you can use tailwind classes if you know them
       // keep in mind this is a description of the character from a solgov spy agency
       description: `
-      <p> 
-        Mark often engaes in trade of an SRM export known as "trickwines". These trickwines are often exchanged for firearms. They display a high level of devotion to the SRM and is often described as a "fanatic".
+      <p>
+        Mark often engages in the trade of an SRM export known as "trickwines." These trickwines are often exchanged for firearms. They display a high level of devotion to the SRM and are often described as a "fanatic."
       </p>
       <p>
-        They seem to have served in some sort of war as they have a large amount of scars on their body. They also seem to have a large amount of combat experience as they are proficent firearm.
+        They seem to have served in some sort of war as they have a large number of scars on their body. They also seem to have a considerable amount of combat experience as they are proficient with firearms.
       </p>
       <p>
-        There speach is difficult to understand due to a large amount of damage to their vocal cords. They claim to have recived it from a "narely fight with a xeno"
+        Their speech is difficult to understand due to a large amount of damage to their vocal cords, resulting in a coarse voice. They claim to have received it from a "gnarly fight with a xeno."
       </p>
       `,
+      // anything you want people to know but not ic
+      ooc: "_fallcon"
     },
     {
       id: 987654321,

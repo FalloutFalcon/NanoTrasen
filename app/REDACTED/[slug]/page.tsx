@@ -46,10 +46,17 @@ export default function markDetailPage({
   const markDetails = [
     { label: "Name", value: mark.name },
     { label: "Faction Affiliation", value: mark.affiliation },
-    { label: "Title", value: mark.position },
+    { label: "Vessel, Deparment, & Title", value: `${mark.currentShip}, ${mark.department}, ${mark.position}`},
     {
-      label: "Age, Gender, Species, Height & Weight",
-      value: `${mark.age} years, ${mark.gender}, ${mark.species}, ${mark.height} (${heightImperial}), ${mark.weight} (${weightImperial})`,
+      label: "Age & Date of birth",
+      value: `${mark.age} years, ${mark.dob}`,
+    },
+    { label: "Species", value: mark.species},
+    { label: "Gender & Relationship Status", 
+      value: `${mark.gender}, ${mark.relationship}`},
+    {
+      label: "Height & Weight",
+      value: `${mark.height} (${heightImperial}), ${mark.weight} (${weightImperial})`,
     },
     { label: "Details", value: mark.description },
   ];
@@ -58,7 +65,7 @@ export default function markDetailPage({
     <main className="p-5 flex-col w-4/5 m-auto">
       <h3 className="text-lg">mark ID: {params.slug}</h3>
       {markDetails.map((detail, index) => (
-        <div className="pt-5 mt-5 border-t-2" key={index}>
+        <div className="pt-2 mt-2 border-t-2" key={index}>
           <h2 className="text-lg font-semibold">{detail.label}</h2>
           {detail.label === "Details" ? (
             <div
@@ -70,6 +77,9 @@ export default function markDetailPage({
           )}
         </div>
       ))}
+      <footer> 
+        <p className="p-10 text-sm font-light italic">{mark.ooc}</p>
+      </footer>
     </main>
   );
 }
