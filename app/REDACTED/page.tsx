@@ -1,18 +1,22 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 
-import { getEmployeesData } from "./employeeData";
+import { getEmployeesData } from "./employeeData"; // Update the path accordingly
 
 type EmployeeKey = "id" | "name" | "position" | "department" | "affiliation";
 
 export default function RecordsPage() {
   const initialEmployees = getEmployeesData();
   const [employees, setEmployees] = useState(initialEmployees);
-  const [sortConfig, setSortConfig] = useState<{ key: EmployeeKey | null; direction: "asc" | "desc" | null }>({ key: null, direction: null });
+  const [sortConfig, setSortConfig] = useState<{
+    key: EmployeeKey | null;
+    direction: "asc" | "desc" | null;
+  }>({ key: null, direction: null });
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleSort = (key: EmployeeKey) => {
-    let direction = "asc";
+    let direction: "asc" | "desc" = "asc"; // Initialize with "asc"
     if (sortConfig.key === key && sortConfig.direction === "asc") {
       direction = "desc";
     }
@@ -26,9 +30,34 @@ export default function RecordsPage() {
 
     setEmployees(sortedEmployees);
   };
+
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+    const filteredEmployees = initialEmployees.filter((employee) =>
+      Object.values(employee).some((value) => {
+        if (typeof value === "string") {
+          return value.toLowerCase().includes(event.target.value.toLowerCase());
+        } else if (typeof value === "number") {
+          return value.toString().includes(event.target.value);
+        }
+        return false;
+      })
+    );
+    setEmployees(filteredEmployees);
+  };
+
   return (
     <main className="flex flex-col items-center justify-center text-center p-5 w-4/5 m-auto">
       <h1 className="p-5">Evidenzkompanien Records</h1>
+      <div className="mb-4">
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchTerm}
+          onChange={handleSearch}
+          className="p-2 border border-slate-500 rounded-md text-slate-500"
+        />
+      </div>
       <table className="border border-slate-500 w-4/5">
         <thead>
           <tr>
@@ -70,7 +99,9 @@ export default function RecordsPage() {
               </td>
               <td className="border border-slate-500">{employee.position}</td>
               <td className="border border-slate-500">{employee.department}</td>
-              <td className="border border-slate-500">{employee.affiliation}</td>
+              <td className="border border-slate-500">
+                {employee.affiliation}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -79,15 +110,22 @@ export default function RecordsPage() {
   );
 }
 
-const SortableHeader = ({ label, sortConfig, onSort }) => {
-  const isSorted = sortConfig.key === label;
+interface SortableHeaderProps {
+  label: string;
+  sortConfig: { key: EmployeeKey | null; direction: "asc" | "desc" | null };
+  onSort: () => void;
+}
+
+const SortableHeader: React.FC<SortableHeaderProps> = ({
+  label,
+  sortConfig,
+  onSort,
+}) => {
+  const isSorted = sortConfig.key === (label.toLowerCase() as EmployeeKey);
   const arrow = isSorted ? (sortConfig.direction === "asc" ? "↑" : "↓") : "";
 
   return (
-    <th
-      className="border border-slate-500 cursor-pointer"
-      onClick={onSort}
-    >
+    <th className="border border-slate-500 cursor-pointer" onClick={onSort}>
       {label} {arrow}
     </th>
   );
