@@ -1,7 +1,6 @@
 'use client'
 import { useRouter } from "next/navigation";
 import Image from 'next/image';
-import flagPic from '/public/Solgov_flag.png';
 import nanotrasenPic from '/public/static/images/Nanotrasen_logo.png';
 
 export default function LoginPage() {
@@ -28,13 +27,6 @@ export default function LoginPage() {
       <h1 className="p-5">Evidenzkompanien Mark Database</h1>
       <h1>Restricted for Evidenzkompanien officals only</h1>
       <h1>Unauthorized access leads to immediate termination</h1>
-
-      <Image
-        src={flagPic} // public directory
-        alt="Solgov Flag"
-        width={256}
-        height={256}
-      />
       <Image
         src={nanotrasenPic} // public directory
         alt="Nanotrasen Logo"
