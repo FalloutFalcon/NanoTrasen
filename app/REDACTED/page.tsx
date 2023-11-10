@@ -1,12 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'REDACTED',
-  description: 'REDACTED',
-};
 
 import { getEmployeesData } from "./employeeData"; // Update the path accordingly
 
