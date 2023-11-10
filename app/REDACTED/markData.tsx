@@ -1,5 +1,5 @@
-export function getEmployeesData() {
-  const employees = [
+export function getMarksData() {
+  const marks = [
     {
       // put "Unknown" for any fields you don't know or have not decided on
       id: 123456789, // 9 digits
@@ -118,5 +118,5 @@ export function getEmployeesData() {
     },
   ];
 
-  return employees;
+  return marks;
 }

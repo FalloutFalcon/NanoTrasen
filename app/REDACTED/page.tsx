@@ -2,39 +2,39 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-import { getEmployeesData } from "./employeeData"; // Update the path accordingly
+import { getMarksData } from "./markData"; // Update the path accordingly
 
-type EmployeeKey = "id" | "name" | "position" | "department" | "affiliation";
+type markKey = "id" | "name" | "position" | "department" | "affiliation";
 
 export default function RecordsPage() {
-  const initialEmployees = getEmployeesData();
-  const [employees, setEmployees] = useState(initialEmployees);
+  const initialMarks = getMarksData();
+  const [marks, setMarks] = useState(initialMarks);
   const [sortConfig, setSortConfig] = useState<{
-    key: EmployeeKey | null;
+    key: markKey | null;
     direction: "asc" | "desc" | null;
   }>({ key: null, direction: null });
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSort = (key: EmployeeKey) => {
+  const handleSort = (key: markKey) => {
     let direction: "asc" | "desc" = "asc"; // Initialize with "asc"
     if (sortConfig.key === key && sortConfig.direction === "asc") {
       direction = "desc";
     }
     setSortConfig({ key, direction });
 
-    const sortedEmployees = [...employees].sort((a, b) => {
+    const sortedMarks = [...marks].sort((a, b) => {
       if (a[key] < b[key]) return direction === "asc" ? -1 : 1;
       if (a[key] > b[key]) return direction === "asc" ? 1 : -1;
       return 0;
     });
 
-    setEmployees(sortedEmployees);
+    setMarks(sortedMarks);
   };
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
-    const filteredEmployees = initialEmployees.filter((employee) =>
-      Object.values(employee).some((value) => {
+    const filteredMarks = initialMarks.filter((mark) =>
+      Object.values(mark).some((value) => {
         if (typeof value === "string") {
           return value.toLowerCase().includes(event.target.value.toLowerCase());
         } else if (typeof value === "number") {
@@ -43,19 +43,19 @@ export default function RecordsPage() {
         return false;
       })
     );
-    setEmployees(filteredEmployees);
+    setMarks(filteredMarks);
   };
 
   return (
     <main className="flex flex-col items-center justify-center text-center p-5 w-4/5 m-auto">
-      <h1 className="p-5">Evidenzkompanien Records</h1>
+      <h1 className="p-5">Evidenzkompanien Mark Database</h1>
       <div className="mb-4">
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="Mark Lookup..."
           value={searchTerm}
           onChange={handleSearch}
-          className="p-2 border border-slate-500 rounded-md text-slate-500"
+          className="p-2 border border-slate-500 rounded-md bg-inherit"
         />
       </div>
       <table className="border border-slate-500 w-4/5">
@@ -89,19 +89,17 @@ export default function RecordsPage() {
           </tr>
         </thead>
         <tbody>
-          {employees.map((employee) => (
-            <tr key={employee.id}>
-              <td className="border border-slate-500">{employee.id}</td>
+          {marks.map((mark) => (
+            <tr key={mark.id}>
+              <td className="border border-slate-500">{mark.id}</td>
               <td className="border border-slate-500 hover:text-cyan-400">
-                <Link href={`/REDACTED/${employee.id}`}>
-                  <p>{employee.name}</p>
+                <Link href={`/REDACTED/${mark.id}`}>
+                  <p>{mark.name}</p>
                 </Link>
               </td>
-              <td className="border border-slate-500">{employee.position}</td>
-              <td className="border border-slate-500">{employee.department}</td>
-              <td className="border border-slate-500">
-                {employee.affiliation}
-              </td>
+              <td className="border border-slate-500">{mark.position}</td>
+              <td className="border border-slate-500">{mark.department}</td>
+              <td className="border border-slate-500">{mark.affiliation}</td>
             </tr>
           ))}
         </tbody>
@@ -112,7 +110,7 @@ export default function RecordsPage() {
 
 interface SortableHeaderProps {
   label: string;
-  sortConfig: { key: EmployeeKey | null; direction: "asc" | "desc" | null };
+  sortConfig: { key: markKey | null; direction: "asc" | "desc" | null };
   onSort: () => void;
 }
 
@@ -121,7 +119,7 @@ const SortableHeader: React.FC<SortableHeaderProps> = ({
   sortConfig,
   onSort,
 }) => {
-  const isSorted = sortConfig.key === (label.toLowerCase() as EmployeeKey);
+  const isSorted = sortConfig.key === (label.toLowerCase() as markKey);
   const arrow = isSorted ? (sortConfig.direction === "asc" ? "↑" : "↓") : "";
 
   return (

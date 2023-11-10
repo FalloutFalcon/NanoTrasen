@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: 'REDACTED',
 };
 
-import { getEmployeesData } from "../employeeData";
+import { getMarksData } from "../markData";
 
 // Function to convert height from centimeters to feet and inches
 const convertHeightToImperial = (heightInCm: number): string => {
@@ -22,42 +22,42 @@ const convertWeightToImperial = (weightInKg: number): string => {
 };
 
 
-export default function EmployeeDetailPage({
+export default function markDetailPage({
   params,
 }: {
   params: { slug: string };
 }) {
-  const employees = getEmployeesData();
-  const employee = employees.find((e) => e.id === parseInt(params.slug));
+  const marks = getMarksData();
+  const mark = marks.find((e) => e.id === parseInt(params.slug));
 
-  if (!employee) {
+  if (!mark) {
     return (
       <main className="p-5 flex-col w-4/5 m-auto">
-        <h3 className="text-lg">Employee ID: {params.slug}</h3>
-        <h3 className="text-lg">Employee Not Found</h3>
+        <h3 className="text-lg">mark ID: {params.slug}</h3>
+        <h3 className="text-lg">mark Not Found</h3>
       </main>
     );
   }
 
   // Convert height and weight to freedom units
-  const heightImperial = convertHeightToImperial(parseInt(employee.height));
-  const weightImperial = convertWeightToImperial(parseInt(employee.weight));
+  const heightImperial = convertHeightToImperial(parseInt(mark.height));
+  const weightImperial = convertWeightToImperial(parseInt(mark.weight));
 
-  const employeeDetails = [
-    { label: "Name", value: employee.name },
-    { label: "Faction Affiliation", value: employee.affiliation },
-    { label: "Title", value: employee.position },
+  const markDetails = [
+    { label: "Name", value: mark.name },
+    { label: "Faction Affiliation", value: mark.affiliation },
+    { label: "Title", value: mark.position },
     {
       label: "Age, Gender, Species, Height & Weight",
-      value: `${employee.age} years, ${employee.gender}, ${employee.species}, ${employee.height} (${heightImperial}), ${employee.weight} (${weightImperial})`,
+      value: `${mark.age} years, ${mark.gender}, ${mark.species}, ${mark.height} (${heightImperial}), ${mark.weight} (${weightImperial})`,
     },
-    { label: "Details", value: employee.description },
+    { label: "Details", value: mark.description },
   ];
 
   return (
     <main className="p-5 flex-col w-4/5 m-auto">
-      <h3 className="text-lg">Employee ID: {params.slug}</h3>
-      {employeeDetails.map((detail, index) => (
+      <h3 className="text-lg">mark ID: {params.slug}</h3>
+      {markDetails.map((detail, index) => (
         <div className="pt-5 mt-5 border-t-2" key={index}>
           <h2 className="text-lg font-semibold">{detail.label}</h2>
           {detail.label === "Details" ? (

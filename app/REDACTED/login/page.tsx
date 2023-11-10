@@ -23,7 +23,10 @@ export default function LoginPage() {
 
   return (
     <main className="flex flex-col items-center justify-center text-center">
-      <h1 className="p-5">Evidenzkompanien Records</h1>
+      <h1 className="p-5">Evidenzkompanien Mark Database</h1>
+      <h1>Restricted for Evidenzkompanien officals only</h1>
+      <h1>Unauthorized access leads to immediate termination</h1>
+
       <Image
         src="/Solgov_flag.png" // public directory
         alt="Solgov flag"
