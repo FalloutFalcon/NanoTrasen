@@ -9,7 +9,7 @@ export function getMarksData() {
       // CMM Inteq Nanotrasen SRM SolGov Syndicate 
       affiliation: "SRM",
       // Custom names instead of maps prefered
-      currentShip: "NTV Solgov 1",
+      currentShip: "Unknown",
       age: 31,
       // Male Female Non-binary anything else
       gender: "Female",
@@ -22,11 +22,14 @@ export function getMarksData() {
       // keep in mind this is a description of the character from a solgov spy agency
       description: `
       <p> 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Mark often engaes in trade of an SRM export known as "trickwines". These trickwines are often exchanged for firearms. They display a high level of devotion to the SRM and is often described as a "fanatic".
       </p>
       <p>
-        Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.
-      <p/>
+        They seem to have served in some sort of war as they have a large amount of scars on their body. They also seem to have a large amount of combat experience as they are proficent firearm.
+      </p>
+      <p>
+        There speach is difficult to understand due to a large amount of damage to their vocal cords. They claim to have recived it from a "narely fight with a xeno"
+      </p>
       `,
     },
     {
