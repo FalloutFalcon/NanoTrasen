@@ -1,3 +1,10 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'REDACTED',
+  description: 'REDACTED',
+};
+
 import { getEmployeesData } from "../employeeData";
 
 // Function to convert height from centimeters to feet and inches
