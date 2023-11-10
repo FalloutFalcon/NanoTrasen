@@ -26,16 +26,18 @@ export default function DefaultPage() {
         </p>
 
         <p className="mb-4">
-          Additional Information: &quot;This shit is Propaganda&quot; Marked by: &quot;Fallcon&quot;
+          Additional Information: &quot;This shit is Propaganda&quot; Marked by:
+          &quot;Fallcon&quot;
         </p>
 
         <h2 className="text-2xl font-bold mb-2">Our History</h2>
 
         <p>
-        &quot;The State is a sapling: Waters of change may drown it, and rays of
-          fear may wither it, but well-tended it will one day bear fruit.&quot; —
-          Excerpt from A Comprehensive Guide to the Tenets of Solar Statecraft.
-          (120 AEA) Ministerial Publishing House, Neue Waldstätte, Terra, Sol.
+          &quot;The State is a sapling: Waters of change may drown it, and rays
+          of fear may wither it, but well-tended it will one day bear
+          fruit.&quot; — Excerpt from A Comprehensive Guide to the Tenets of
+          Solar Statecraft. (120 AEA) Ministerial Publishing House, Neue
+          Waldstätte, Terra, Sol.
         </p>
 
         <div className="bg-[#EF8F2A] p-4 rounded-md mt-8">
@@ -54,12 +56,12 @@ export default function DefaultPage() {
         </h2>
         <p>
           Behold the brilliance of SolGov, a semi-direct democratic federal
-          republic that stands as a beacon of governance. Our &quot;Solar&quot; sectors,
-          bathed in the light of democracy, and the &quot;Intersolar&quot; frontiers,
-          where martial law prevails, together form a tapestry of harmony. Our
-          citizens, blessed by the Terran Constitution, wield the power of
-          referendums, shaping our government and challenging the tides of
-          change.
+          republic that stands as a beacon of governance. Our &quot;Solar&quot;
+          sectors, bathed in the light of democracy, and the
+          &quot;Intersolar&quot; frontiers, where martial law prevails, together
+          form a tapestry of harmony. Our citizens, blessed by the Terran
+          Constitution, wield the power of referendums, shaping our government
+          and challenging the tides of change.
         </p>
         <p>
           Witness the grandeur of our institutions, tirelessly working to
@@ -84,7 +86,7 @@ export default function DefaultPage() {
         </p>
         <ul>
           <li>
-            Bask in the glory of the largest institution within SolGov's
+            Bask in the glory of the largest institution within SolGov&apos;s
             government.
           </li>
           <li>
@@ -113,7 +115,10 @@ export default function DefaultPage() {
           </h3>
           <p>
             🕵️‍♂️ Evidenzkompanien: Guardians of Solarian Wisdom!{" "}
-            <Link className="text-black hover:text-white" href="/REDACTED/login">
+            <Link
+              className="text-black hover:text-white"
+              href="/REDACTED/login"
+            >
               {" "}
               Unseen, unheard, unstoppable.
             </Link>{" "}
