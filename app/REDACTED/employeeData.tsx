@@ -1,8 +1,8 @@
 export function getEmployeesData() {
   const employees = [
     {
-      id: 123456789,
-      name: "Baxter Baxter",
+      id: 123456789, // 9 digits
+      name: "(not lore accurate c:) Baxter Baxter",
       department: "Engineering",
       position: "Engineer",
       affiliation: "Nanotransen",
@@ -11,15 +11,19 @@ export function getEmployeesData() {
       species: "Human",
       height: "160 cm",
       weight: "48.5 kg",
+      //support any html and you can use tailwind classes if you know them
       description: `
-      <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.
+      <p> 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
       </p>
+      <p>
+        Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.
+      <p/>
       `,
     },
     {
       id: 987654321,
-      name: "John Doe",
+      name: "(real) John Doe",
       department: "Medical",
       position: "Doctor",
       affiliation: "Nanotransen",
@@ -34,7 +38,7 @@ export function getEmployeesData() {
     },
     {
       id: 456789123,
-      name: "Jane Smith",
+      name: "(real) Jane Smith",
       department: "Security",
       position: "Security Officer",
       affiliation: "Nanotransen",
@@ -49,7 +53,7 @@ export function getEmployeesData() {
     },
     {
       id: 135792468,
-      name: "Samuel Jenkins",
+      name: "(real) Samuel Jenkins",
       department: "Research",
       position: "Scientist",
       affiliation: "Syndicate",
@@ -64,7 +68,7 @@ export function getEmployeesData() {
     },
     {
       id: 987123456,
-      name: "Maria Rodriguez",
+      name: "(real) Maria Rodriguez",
       department: "Medical",
       position: "Doctor",
       affiliation: "Solgov",
@@ -79,7 +83,7 @@ export function getEmployeesData() {
     },
     {
       id: 369258147,
-      name: "Max Turner",
+      name: "(real) Max Turner",
       department: "Security",
       position: "Head of Security",
       affiliation: "SRM",
@@ -94,7 +98,7 @@ export function getEmployeesData() {
     },
     {
       id: 246813579,
-      name: "Luna Moonshadow",
+      name: "(real) Luna Moonshadow",
       department: "Research",
       position: "Xenobiologist",
       affiliation: "Nanotransen",
