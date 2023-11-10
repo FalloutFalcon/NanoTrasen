@@ -1,17 +1,22 @@
 export function getEmployeesData() {
   const employees = [
     {
+      // put "Unknown" for any fields you don't know or have not decided on
       id: 123456789, // 9 digits
       name: "(not lore accurate c:) Baxter Baxter",
       department: "Engineering",
       position: "Engineer",
       affiliation: "Nanotransen",
       age: 31,
+      // Male Female Non-binary anything else
       gender: "Female",
+      // use the name listed on the website
       species: "Human",
+      // both of these have conversion to freedom units in site
       height: "160 cm",
       weight: "48.5 kg",
-      //support any html and you can use tailwind classes if you know them
+      // support any html and you can use tailwind classes if you know them
+      // keep in mind this is a description of the character from a solgov spy agency
       description: `
       <p> 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -23,7 +28,7 @@ export function getEmployeesData() {
     },
     {
       id: 987654321,
-      name: "(real) John Doe",
+      name: "(temp) John Doe",
       department: "Medical",
       position: "Doctor",
       affiliation: "Nanotransen",
@@ -38,7 +43,7 @@ export function getEmployeesData() {
     },
     {
       id: 456789123,
-      name: "(real) Jane Smith",
+      name: "(temp) Jane Smith",
       department: "Security",
       position: "Security Officer",
       affiliation: "Nanotransen",
@@ -53,7 +58,7 @@ export function getEmployeesData() {
     },
     {
       id: 135792468,
-      name: "(real) Samuel Jenkins",
+      name: "(temp) Samuel Jenkins",
       department: "Research",
       position: "Scientist",
       affiliation: "Syndicate",
@@ -68,7 +73,7 @@ export function getEmployeesData() {
     },
     {
       id: 987123456,
-      name: "(real) Maria Rodriguez",
+      name: "(temp) Maria Rodriguez",
       department: "Medical",
       position: "Doctor",
       affiliation: "Solgov",
@@ -83,7 +88,7 @@ export function getEmployeesData() {
     },
     {
       id: 369258147,
-      name: "(real) Max Turner",
+      name: "(temp) Max Turner",
       department: "Security",
       position: "Head of Security",
       affiliation: "SRM",
@@ -98,7 +103,7 @@ export function getEmployeesData() {
     },
     {
       id: 246813579,
-      name: "(real) Luna Moonshadow",
+      name: "(temp) Luna Moonshadow",
       department: "Research",
       position: "Xenobiologist",
       affiliation: "Nanotransen",
