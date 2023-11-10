@@ -1,7 +1,7 @@
 import { getEmployeesData } from "../employeeData";
 
 // Function to convert height from centimeters to feet and inches
-const convertHeightToImperial = (heightInCm) => {
+const convertHeightToImperial = (heightInCm: number): string => {
   const totalInches = heightInCm / 2.54;
   const feet = Math.floor(totalInches / 12);
   const inches = Math.floor(totalInches % 12);
@@ -9,10 +9,11 @@ const convertHeightToImperial = (heightInCm) => {
 };
 
 // Function to convert weight from kilograms to pounds
-const convertWeightToImperial = (weightInKg) => {
+const convertWeightToImperial = (weightInKg: number): string => {
   const pounds = Math.floor(weightInKg * 2.20462);
   return `${pounds} lbs`;
 };
+
 
 export default function EmployeeDetailPage({
   params,
