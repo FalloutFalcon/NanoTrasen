@@ -1,8 +1,8 @@
-import { Metadata } from 'next'
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'REDACTED',
-  description: 'REDACTED',
+  title: "REDACTED",
+  description: "REDACTED",
 };
 
 import { getMarksData } from "../markData";
@@ -20,7 +20,6 @@ const convertWeightToImperial = (weightInKg: number): string => {
   const pounds = Math.floor(weightInKg * 2.20462);
   return `${pounds} lbs`;
 };
-
 
 export default function markDetailPage({
   params,
@@ -46,14 +45,19 @@ export default function markDetailPage({
   const markDetails = [
     { label: "Name", value: mark.name },
     { label: "Faction Affiliation", value: mark.affiliation },
-    { label: "Vessel, Deparment, & Title", value: `${mark.currentShip}, ${mark.department}, ${mark.position}`},
+    {
+      label: "Vessel, Deparment, & Title",
+      value: `${mark.currentShip}, ${mark.department}, ${mark.position}`,
+    },
     {
       label: "Age & Date of birth",
-      value: `${mark.age} years, ${mark.dob}`,
+      value: `${mark.age}, ${mark.dob}`,
     },
-    { label: "Species", value: mark.species},
-    { label: "Gender & Relationship Status", 
-      value: `${mark.gender}, ${mark.relationship}`},
+    { label: "Species", value: mark.species },
+    {
+      label: "Gender & Relationship Status",
+      value: `${mark.gender}, ${mark.relationship}`,
+    },
     {
       label: "Height & Weight",
       value: `${mark.height} (${heightImperial}), ${mark.weight} (${weightImperial})`,
@@ -77,7 +81,7 @@ export default function markDetailPage({
           )}
         </div>
       ))}
-      <footer> 
+      <footer>
         <p className="p-10 text-sm font-light italic">{mark.ooc}</p>
       </footer>
     </main>
