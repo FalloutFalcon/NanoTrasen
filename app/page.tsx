@@ -1,42 +1,128 @@
-'use client'
-import { useRouter } from "next/navigation";
-import Image from 'next/image';
+import Image from "next/image";
+import Link from "next/link";
 
-export default function LoginPage() {
-  const router = useRouter();
-
-  const handleLogin = () => {
-    const usernameInput = document.getElementById('username') as HTMLInputElement | null;
-    const passwordInput = document.getElementById('password') as HTMLInputElement | null;
-
-    if (usernameInput !== null && passwordInput !== null) {
-      if (
-        usernameInput.value.trim() === "baxter123" &&
-        passwordInput.value.trim() === "Ih8syndi"
-      ) {
-        router.push("/records");
-      } else {
-        // Show an error message or handle the case when input fields are empty
-      }
-    }
-  };
-
+export default function DefaultPage() {
   return (
-    <main className="flex flex-col items-center justify-center text-center">
-      <h1 className="p-5">NanoTrasen Records</h1>
-      <Image
-        src="/Nanotrasen_logo.png" // public directory
-        alt="NanoTrasen Logo"
-        width={100}
-        height={100}
-      />
-      <p>Login</p>
-      <input type="text" defaultValue="baxter123" id="username" className="text-black"/>
-      <p>Password</p>
-      <input type="text" defaultValue="Ih8syndi" id="password" className="text-black"/>
-      <button className="m-5 font-bold py-2 px-4 border rounded" onClick={handleLogin}>
-        Login
-      </button>
-    </main>
+    <div className="min-h-screen">
+      <header className="bg-[#303845] text-center py-4">
+        <h1 className="text-3xl font-bold">
+          The Most Serene Solar and Intersolar Confederation Government Portal
+        </h1>
+      </header>
+
+      <main className="max-w-3xl mx-auto p-4">
+        <p className="mb-4">
+          Welcome to the official government portal of The Most Serene Solar and
+          Intersolar Confederation. Serving the Solarian citizens with pride and
+          dedication.
+        </p>
+
+        <p className="mb-4">
+          Additional Information: "This shit is Propaganda" Marked by: "Fallcon"
+        </p>
+
+        <h2 className="text-2xl font-bold mb-2">Our History</h2>
+        <div className="mb-4">
+          <Image
+            src="/Solgov_flag.png" // public directory
+            alt="Solgov flag"
+            width={256}
+            height={256}
+          />
+        </div>
+
+        <p>
+          "The State is a sapling: Waters of change may drown it, and rays of
+          fear may wither it, but well-tended it will one day bear fruit." —
+          Excerpt from A Comprehensive Guide to the Tenets of Solar Statecraft.
+          (120 AEA) Ministerial Publishing House, Neue Waldstätte, Terra, Sol.
+        </p>
+
+        <div className="bg-[#EF8F2A] p-4 rounded-md mt-8">
+          <h3 className="text-xl font-semibold mb-2">Propaganda Alert!</h3>
+          <p>
+            🌞 Embrace the brilliance of Solarian unity! Together, we build a
+            future bathed in the eternal light of progress and harmony. Join us
+            in shaping the destiny of The Most Serene Solar and Intersolar
+            Confederation! 🌍
+          </p>
+        </div>
+
+        {/* Structure Section */}
+        <h2 className="text-2xl font-bold mb-2 mt-8">Our Magnificent Structure</h2>
+        <p>
+          Behold the brilliance of SolGov, a semi-direct democratic federal
+          republic that stands as a beacon of governance. Our "Solar" sectors,
+          bathed in the light of democracy, and the "Intersolar" frontiers,
+          where martial law prevails, together form a tapestry of harmony. Our
+          citizens, blessed by the Terran Constitution, wield the power of
+          referendums, shaping our government and challenging the tides of
+          change.
+        </p>
+        <p>
+          Witness the grandeur of our institutions, tirelessly working to
+          maintain order and stability across all sectors, fueled by the
+          boundless resources devoted to their noble cause.
+        </p>
+
+        {/* Department of Administrative Affairs Section */}
+        <h2 className="text-2xl font-bold mb-2 mt-8">
+          The Illustrious Department of Administrative Affairs
+        </h2>
+        <p>
+          Within the Solar Confederation, none rival the might of the Department
+          of Administrative Affairs (DAA). From its humble origins as a
+          supportive office, it has burgeoned into a colossal force of 40
+          billion stalwart staff members—administrators, officials, and civil
+          servants. The DAA, guardian of administrative harmony, tackles a
+          myriad of tasks, from representing the Confederation to orchestrating
+          colonial supply lines. It is the bedrock of stability beyond our
+          beloved Sol system, the second most-encountered institution on the
+          frontier.
+        </p>
+        <ul>
+          <li>
+            Bask in the glory of the largest institution within SolGov's
+            government.
+          </li>
+          <li>
+            Rest assured, for the DAA pursues no selfish agenda; its sole
+            concern is preserving the sacred status quo.
+          </li>
+        </ul>
+
+        {/* Sonnensöldneren and Solar Companies Section */}
+        {/* ... (similar structure as above) */}
+
+        {/* The Sol Administration Section */}
+        {/* ... (similar structure as above) */}
+
+        <h2 className="text-2xl font-bold mb-2 mt-8">Evidenzkompanien</h2>
+        <p>
+          The Evidenzkompanien, with their watchful eyes and unwavering
+          commitment, tirelessly ensure the security and intelligence of our
+          great Confederation. They keep tabs on characters from all factions,
+          maintaining the delicate balance of information in our ever-evolving
+          universe.
+        </p>
+        <div className="bg-[#EF8F2A] p-4 rounded-md mt-4">
+          <h3 className="text-xl font-semibold mb-2">
+            Evidenzkompanien Propaganda
+          </h3>
+          <p>
+            🕵️‍♂️ Evidenzkompanien: Guardians of Solarian Wisdom!{" "}
+            <Link className="text-black hover:text-white" href="/login">
+              {" "}
+              Unseen, unheard, unstoppable.
+            </Link>{" "}
+            Embrace the knowledge they provide for the prosperity of The Most
+            Serene Solar and Intersolar Confederation! to access the truth.
+          </p>
+        </div>
+      </main>
+      <footer className="bg-[#303845] text-center py-2">
+        &copy; Solar Confederation
+      </footer>
+    </div>
   );
 }

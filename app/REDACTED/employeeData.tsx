@@ -12,9 +12,9 @@ export function getEmployeesData() {
       height: "160 cm",
       weight: "48.5 kg",
       description: `
-        <p>
+      <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.
-        </p>
+      </p>
       `,
     },
     {
@@ -29,9 +29,7 @@ export function getEmployeesData() {
       height: "178 cm",
       weight: "72.5 kg",
       description: `
-      <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.
-      </p>
       `,
     },
     {
@@ -46,9 +44,7 @@ export function getEmployeesData() {
       height: "173 cm",
       weight: "68 kg",
       description: `
-      <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.
-      </p>
       `,
     },
     {
@@ -63,9 +59,7 @@ export function getEmployeesData() {
       height: "183 cm",
       weight: "81.5 kg",
       description: `
-      <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.
-      </p>
       `,
     },
     {
@@ -80,9 +74,7 @@ export function getEmployeesData() {
       height: "165 cm",
       weight: "63.5 kg",
       description: `
-      <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.
-      </p>
       `,
     },
     {
@@ -97,9 +89,7 @@ export function getEmployeesData() {
       height: "188 cm",
       weight: "90.5 kg",
       description: `
-      <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.
-      </p>
       `,
     },
     {
@@ -114,9 +104,7 @@ export function getEmployeesData() {
       height: "175 cm",
       weight: "72.5 kg",
       description: `
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.
-      </p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.
       `,
     },
   ];
