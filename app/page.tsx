@@ -1,16 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import solgovFlag from "/public/static/images/SolGov_flag.png";
+
 export default function DefaultPage() {
   return (
     <div className="min-h-screen">
       <header className="bg-[#303845] text-center py-4 flex flex-row items-center justify-center">
         <div className="mb-4">
           <Image
-            src="/Solgov_flag.png" // public directory
-            alt="Solgov flag"
-            width={128}
-            height={128}
+            src={solgovFlag} // public directory
+            alt="Nanotrasen Logo"
+            width={256}
+            height={256}
           />
         </div>
         <h1 className="text-3xl font-bold p-4">

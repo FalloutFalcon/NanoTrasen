@@ -1,14 +1,18 @@
-'use client'
+"use client";
 import { useRouter } from "next/navigation";
-import Image from 'next/image';
-import nanotrasenPic from '/public/static/images/Nanotrasen_logo.png';
+import Image from "next/image";
+import solgovFlag from "/public/static/images/SolGov_flag.png";
 
 export default function LoginPage() {
   const router = useRouter();
 
   const handleLogin = () => {
-    const usernameInput = document.getElementById('username') as HTMLInputElement | null;
-    const passwordInput = document.getElementById('password') as HTMLInputElement | null;
+    const usernameInput = document.getElementById(
+      "username"
+    ) as HTMLInputElement | null;
+    const passwordInput = document.getElementById(
+      "password"
+    ) as HTMLInputElement | null;
 
     if (usernameInput !== null && passwordInput !== null) {
       if (
@@ -28,16 +32,29 @@ export default function LoginPage() {
       <h1>Restricted for Evidenzkompanien officals only</h1>
       <h1>Unauthorized access leads to immediate termination</h1>
       <Image
-        src={nanotrasenPic} // public directory
+        src={solgovFlag} // public directory
         alt="Nanotrasen Logo"
         width={256}
         height={256}
       />
       <p>Login</p>
-      <input type="text" defaultValue="baxter123" id="username" className="text-black"/>
+      <input
+        type="text"
+        defaultValue="baxter123"
+        id="username"
+        className="text-black"
+      />
       <p>Password</p>
-      <input type="text" defaultValue="Ih8syndi" id="password" className="text-black"/>
-      <button className="m-5 font-bold py-2 px-4 border rounded" onClick={handleLogin}>
+      <input
+        type="text"
+        defaultValue="Ih8syndi"
+        id="password"
+        className="text-black"
+      />
+      <button
+        className="m-5 font-bold py-2 px-4 border rounded"
+        onClick={handleLogin}
+      >
         Login
       </button>
     </main>
