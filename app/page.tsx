@@ -4,8 +4,16 @@ import Link from "next/link";
 export default function DefaultPage() {
   return (
     <div className="min-h-screen">
-      <header className="bg-[#303845] text-center py-4">
-        <h1 className="text-3xl font-bold">
+      <header className="bg-[#303845] text-center py-4 flex flex-row items-center justify-center">
+        <div className="mb-4">
+          <Image
+            src="/Solgov_flag.png" // public directory
+            alt="Solgov flag"
+            width={128}
+            height={128}
+          />
+        </div>
+        <h1 className="text-3xl font-bold p-4">
           The Most Serene Solar and Intersolar Confederation Government Portal
         </h1>
       </header>
@@ -22,14 +30,6 @@ export default function DefaultPage() {
         </p>
 
         <h2 className="text-2xl font-bold mb-2">Our History</h2>
-        <div className="mb-4">
-          <Image
-            src="/Solgov_flag.png" // public directory
-            alt="Solgov flag"
-            width={256}
-            height={256}
-          />
-        </div>
 
         <p>
           "The State is a sapling: Waters of change may drown it, and rays of
@@ -49,7 +49,9 @@ export default function DefaultPage() {
         </div>
 
         {/* Structure Section */}
-        <h2 className="text-2xl font-bold mb-2 mt-8">Our Magnificent Structure</h2>
+        <h2 className="text-2xl font-bold mb-2 mt-8">
+          Our Magnificent Structure
+        </h2>
         <p>
           Behold the brilliance of SolGov, a semi-direct democratic federal
           republic that stands as a beacon of governance. Our "Solar" sectors,
@@ -111,7 +113,7 @@ export default function DefaultPage() {
           </h3>
           <p>
             🕵️‍♂️ Evidenzkompanien: Guardians of Solarian Wisdom!{" "}
-            <Link className="text-black hover:text-white" href="/login">
+            <Link className="text-black hover:text-white" href="/REDACTED/login">
               {" "}
               Unseen, unheard, unstoppable.
             </Link>{" "}
