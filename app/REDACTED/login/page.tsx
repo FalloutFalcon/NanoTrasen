@@ -34,8 +34,8 @@ export default function LoginPage() {
       <Image
         src={solgovFlag} // public directory
         alt="Nanotrasen Logo"
-        width={256}
-        height={256}
+        width={128}
+        height={128}
       />
       <p>Login</p>
       <input

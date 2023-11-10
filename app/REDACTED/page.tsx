@@ -7,6 +7,7 @@ import { getMarksData } from "./markData"; // Update the path accordingly
 type markKey = "id" | "name" | "position" | "department" | "affiliation";
 
 export default function RecordsPage() {
+  const factions = ["CMM", "Inteq", "Nanotrasen", "SRM", "SolGov", "Syndicate"];
   const initialMarks = getMarksData();
   const [marks, setMarks] = useState(initialMarks);
   const [sortConfig, setSortConfig] = useState<{
@@ -49,13 +50,24 @@ export default function RecordsPage() {
   return (
     <main className="flex flex-col items-center justify-center text-center p-5 w-4/5 m-auto">
       <h1 className="p-5">Evidenzkompanien Mark Database</h1>
-      <div className="mb-4">
+      <h2 className="pt-5">Groups of intrest</h2>
+      <div className="flex flex-row mb-4">
+        {factions.map((faction) => (
+          <Link key={faction} href={`/REDACTED/groups/${faction}`}>
+            <p className="border border-slate-500 hover:text-cyan-400 p-2">
+              {faction}
+            </p>
+          </Link>
+        ))}
+      </div>
+      <h2 className="pt-5">People of intrest</h2>
+      <div className="w-4/5">
         <input
           type="text"
           placeholder="Mark Lookup..."
           value={searchTerm}
           onChange={handleSearch}
-          className="p-2 border border-slate-500 rounded-md bg-inherit"
+          className="p-2 border border-slate-500 bg-inherit w-full accent-transparent"
         />
       </div>
       <table className="border border-slate-500 w-4/5">
