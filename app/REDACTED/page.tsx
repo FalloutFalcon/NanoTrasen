@@ -48,9 +48,8 @@ export default function RecordsPage() {
   };
 
   return (
-    <main className="flex flex-col items-center justify-center text-center p-5 w-4/5 m-auto">
-      <h1 className="p-5">Evidenzkompanien Mark Database</h1>
-      <h2 className="pt-5">Groups of intrest</h2>
+    <main className="flex flex-col items-center text-center p-5 w-4/5 m-auto">
+      <h2 className="text-lg">Groups of intrest</h2>
       <div className="flex flex-row mb-4">
         {factions.map((faction) => (
           <Link key={faction} href={`/REDACTED/groups/${faction}`}>
@@ -60,7 +59,7 @@ export default function RecordsPage() {
           </Link>
         ))}
       </div>
-      <h2 className="pt-5">People of intrest</h2>
+      <h2 className="pt-5 text-lg">People of intrest</h2>
       <div className="w-4/5">
         <input
           type="text"

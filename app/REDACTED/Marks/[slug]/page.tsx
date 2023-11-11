@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: "REDACTED",
 };
 
-import { getMarksData } from "../markData";
+import { getMarksData } from "../../markData";
 
 // Function to convert height from centimeters to feet and inches
 const convertHeightToImperial = (heightInCm: number): string => {

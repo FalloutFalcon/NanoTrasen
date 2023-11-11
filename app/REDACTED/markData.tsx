@@ -1,25 +1,6 @@
 export function getMarksData() {
   const marks = [
     {
-      id: 111111111,
-      name: "Unknown",
-      affiliation: "Unknown",
-      currentShip: "Unknown",
-      department: "Unknown",
-      position: "Unknown",
-      age: "Unknown",
-      dob: "Unknown",
-      species: "Unknown",
-      gender: "Unknown",
-      relationship: "Unknown",
-      height: "Unknown",
-      weight: "Unknown",
-      description: `
-      Unknown
-      `,
-      ooc: "",
-    },
-    {
       // put "Unknown" for any fields you don't know or have not decided on
       id: 692697957, // 9 digits https://numbergenerator.org/random-9-digit-number-generator
       name: "Baxter Baxter",
@@ -110,6 +91,25 @@ export function getMarksData() {
       </p>
       `,
       ooc: "IdiotMrBones",
+    },
+    {
+      id: 111111111,
+      name: "Unknown",
+      affiliation: "Unknown",
+      currentShip: "Unknown",
+      department: "Unknown",
+      position: "Unknown",
+      age: "Unknown",
+      dob: "Unknown",
+      species: "Unknown",
+      gender: "Unknown",
+      relationship: "Unknown",
+      height: "Unknown",
+      weight: "Unknown",
+      description: `
+      Unknown
+      `,
+      ooc: "",
     },
     {
       id: 222222222,

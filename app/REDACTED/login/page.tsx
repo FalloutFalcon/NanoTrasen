@@ -28,10 +28,9 @@ export default function LoginPage() {
 
   return (
     <main className="flex flex-col items-center justify-center text-center">
-      <p className="animate-pulse p-20">Your not meant to be here.....</p>
-      <h1 className="p-5">Evidenzkompanien Mark Database</h1>
-      <h1>Restricted for Evidenzkompanien officals only</h1>
-      <h1>Unauthorized access leads to immediate termination</h1>
+      <p className="animate-pulse p-10">Your not meant to be here.....</p>
+      <h2>Restricted for Evidenzkompanien officals only</h2>
+      <h2>Unauthorized access leads to immediate termination</h2>
       <Image
         src={solgovFlag} // public directory
         alt="Nanotrasen Logo"
@@ -53,7 +52,7 @@ export default function LoginPage() {
         className="text-black"
       />
       <button
-        className="m-5 font-bold py-2 px-4 border rounded"
+        className="font-bold m-5 p-1 py-2 px-4 border border-slate-500 hover:text-cyan-400"
         onClick={handleLogin}
       >
         Login
