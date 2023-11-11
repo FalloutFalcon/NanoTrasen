@@ -104,7 +104,7 @@ export default function RecordsPage() {
             <tr key={mark.id}>
               <td className="border border-slate-500">{mark.id}</td>
               <td className="border border-slate-500 hover:text-cyan-400">
-                <Link href={`/REDACTED/${mark.id}`}>
+                <Link href={`/REDACTED/marks/${mark.id}`}>
                   <p>{mark.name}</p>
                 </Link>
               </td>

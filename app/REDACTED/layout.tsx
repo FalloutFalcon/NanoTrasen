@@ -1,5 +1,5 @@
 import HeaderComponent from "./header";
-import NavbarComponent from "./footer";
+import FooterComponent from "./footer";
 
 export default function MainLayout({
     children, // will be a page or nested layout
@@ -10,7 +10,7 @@ export default function MainLayout({
       <div className="flex flex-col">
         <HeaderComponent></HeaderComponent>
         <main>{children}</main>
-        <NavbarComponent></NavbarComponent>
+        <FooterComponent></FooterComponent>
       </div>
     )
   }

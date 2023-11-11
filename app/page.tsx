@@ -11,8 +11,8 @@ export default function DefaultPage() {
           <Image
             src={solgovFlag} // public directory
             alt="Nanotrasen Logo"
-            width={256}
-            height={256}
+            width={128}
+            height={128}
           />
         </div>
         <h1 className="text-3xl font-bold p-4">
