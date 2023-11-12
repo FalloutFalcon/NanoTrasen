@@ -6,7 +6,7 @@ import solgovFlag from "/public/static/images/SolGov_flag.png";
 export default function DefaultPage() {
   return (
     <div className="min-h-screen">
-      <header className="bg-[#303845] text-center py-4 flex flex-row items-center justify-center">
+      <header className="bg-solgov-background-dark text-center py-4 flex flex-row items-center justify-center">
         <div className="mb-4">
           <Image
             src={solgovFlag} // public directory
@@ -129,7 +129,7 @@ export default function DefaultPage() {
           </p>
         </div>
       </main>
-      <footer className="bg-[#303845] text-center py-2">
+      <footer className="bg-solgov-background-dark text-center py-2">
         &copy; Solar Confederation
       </footer>
     </div>

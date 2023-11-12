@@ -47,6 +47,10 @@ const config: Config = {
           darker: '#1F2026',
           darkest: '#14151A',
         },
+        'solgov-background': {
+          DEFAULT: '#424D5F',
+          dark: '#303845',
+        },
       },
     },
   },

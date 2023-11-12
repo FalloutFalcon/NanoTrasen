@@ -41,17 +41,17 @@ export default function LoginPage() {
         type="text"
         defaultValue="baxter123"
         id="username"
-        className="text-black"
+        className="p-1 border border-slate-500 bg-inherit accent-transparent"
       />
       <p>Password</p>
       <input
         type="text"
         defaultValue="Ih8syndi"
         id="password"
-        className="text-black"
+        className="p-1 border border-slate-500 bg-inherit accent-transparent"
       />
       <button
-        className="font-bold m-5 p-1 py-2 px-4 border border-slate-500 hover:text-cyan-400"
+        className="font-bold m-5 p-1 py-2 px-4 border border-slate-500 text-solgov-yellow-dark hover:text-solgov-yellow"
         onClick={handleLogin}
       >
         Login
