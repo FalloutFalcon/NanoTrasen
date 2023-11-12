@@ -53,7 +53,7 @@ export default function RecordsPage() {
       <div className="flex flex-row mb-4">
         {factions.map((faction) => (
           <Link key={faction} href={`/REDACTED/groups/${faction}`}>
-            <p className="border border-slate-500 hover:text-cyan-400 p-2">
+            <p className="border border-slate-500 text-solgov-yellow-dark hover:text-solgov-yellow p-2">
               {faction}
             </p>
           </Link>
@@ -103,7 +103,7 @@ export default function RecordsPage() {
           {marks.map((mark) => (
             <tr key={mark.id}>
               <td className="border border-slate-500">{mark.id}</td>
-              <td className="border border-slate-500 hover:text-cyan-400">
+              <td className="border border-slate-500 text-solgov-yellow-dark hover:text-solgov-yellow">
                 <Link href={`/REDACTED/marks/${mark.id}`}>
                   <p>{mark.name}</p>
                 </Link>

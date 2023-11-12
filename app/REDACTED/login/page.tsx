@@ -21,7 +21,6 @@ export default function LoginPage() {
       ) {
         router.push("/REDACTED");
       } else {
-        // Show an error message or handle the case when input fields are empty
       }
     }
   };

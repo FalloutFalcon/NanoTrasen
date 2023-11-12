@@ -42,7 +42,7 @@ export default function DefaultPage() {
           Waldstätte, Terra, Sol.
         </p>
 
-        <div className="bg-[#EF8F2A] p-4 rounded-md mt-8">
+        <div className="bg-solgov-yellow-dark p-4 rounded-md mt-8">
           <h3 className="text-xl font-semibold mb-2">Propaganda Alert!</h3>
           <p>
             🌞 Embrace the brilliance of Solarian unity! Together, we build a
@@ -111,14 +111,14 @@ export default function DefaultPage() {
           maintaining the delicate balance of information in our ever-evolving
           universe.
         </p>
-        <div className="bg-[#EF8F2A] p-4 rounded-md mt-4">
+        <div className="bg-solgov-yellow-dark p-4 rounded-md mt-4">
           <h3 className="text-xl font-semibold mb-2">
             Evidenzkompanien Propaganda
           </h3>
           <p>
             🕵️‍♂️ Evidenzkompanien: Guardians of Solarian Wisdom!{" "}
             <Link
-              className="text-black hover:text-white"
+              className="text-solgov-grey hover:text-solgov-grey-light"
               href="/REDACTED/login"
             >
               {" "}
