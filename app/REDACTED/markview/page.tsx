@@ -1,4 +1,5 @@
 import { sql } from "@vercel/postgres";
+import Link from "next/link"; // Assuming you're using Next.js
 
 async function getDataFromDatabase() {
   try {
@@ -11,29 +12,34 @@ async function getDataFromDatabase() {
 }
 
 export default async function Page() {
-  const data = await getDataFromDatabase();
+  const marks = await getDataFromDatabase();
 
   return (
-    <main>
-      <table>
-        <thead>
-          <tr>
-            {/* Assuming keys of the first row represent column headers */}
-            {Object.keys(data[0]).map((key) => (
-              <th key={key}>{key}</th>
-            ))}
+    <table className="border border-slate-500 w-4/5">
+      <thead>
+        <tr>
+          <th className="border border-slate-500">ID</th>
+          <th className="border border-slate-500">Name</th>
+          <th className="border border-slate-500">Position</th>
+          <th className="border border-slate-500">Department</th>
+          <th className="border border-slate-500">Affiliation</th>
+        </tr>
+      </thead>
+      <tbody>
+        {marks.map((mark) => (
+          <tr key={mark.id}>
+            <td className="border border-slate-500">{mark.id}</td>
+            <td className="border border-slate-500 text-solgov-yellow-dark hover:text-solgov-yellow">
+              <Link href={`/REDACTED/marks/${mark.id}`}>
+                <p>{mark.name}</p>
+              </Link>
+            </td>
+            <td className="border border-slate-500">{mark.position}</td>
+            <td className="border border-slate-500">{mark.department}</td>
+            <td className="border border-slate-500">{mark.affiliation}</td>
           </tr>
-        </thead>
-        <tbody>
-          {data.map((row, index) => (
-            <tr key={index}>
-              {Object.values(row).map((value, idx) => (
-                <td key={idx}>{value}</td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </main>
+        ))}
+      </tbody>
+    </table>
   );
 }
