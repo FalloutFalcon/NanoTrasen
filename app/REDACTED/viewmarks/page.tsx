@@ -1,3 +1,5 @@
+"use client";
+
 import { sql } from "@vercel/postgres";
 import { QueryResultRow } from "@vercel/postgres";
 import Link from "next/link";
