@@ -4,20 +4,28 @@ import { NextPage } from "next";
 
 const AddMarkPage: NextPage = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    affiliation: "",
-    currentShip: "",
-    department: "",
-    position: "",
-    age: "",
-    dob: "",
-    species: "",
-    gender: "",
-    relationship: "",
-    height: "",
-    weight: "",
-    description: "",
-    ooc: "",
+    name: "Baxter Baxter",
+    affiliation: "SRM",
+    currentShip: "Unknown",
+    department: "Command",
+    position: "Montange",
+    age: "31",
+    dob: "Unknown",
+    species: "Human",
+    gender: "Female",
+    relationship: "Single",
+    height: "165 cm",
+    weight: "49.5 kg",
+    description: `<p>
+    Mark often engages in the trade of an SRM export known as "trickwines." These trickwines are often exchanged for firearms. They display a high level of devotion to the SRM and are often described as a "fanatic."
+  </p>
+  <p>
+    They seem to have served in some sort of war as they have a large number of scars on their body. They also seem to have a considerable amount of combat experience as they are proficient with firearms.
+  </p>
+  <p>
+    Their speech is difficult to understand due to a large amount of damage to their vocal cords, resulting in a coarse voice. They claim to have received it from a "gnarly fight with a xeno."
+  </p>`,
+    ooc: "_fallcon",
   });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -71,7 +79,7 @@ const AddMarkPage: NextPage = () => {
     <div className="flex flex-col text-center">
       <h1>Add Mark Entry</h1>
       <form onSubmit={handleSubmit}>
-        <label>Title:</label>
+        <label>Name:</label>
         <div>
           <input
             type="text"
@@ -82,6 +90,7 @@ const AddMarkPage: NextPage = () => {
           />
         </div>
         <label>Affiliation:</label>
+        <p>Indepenant CMM Inteq Nanotrasen SRM SolGov Syndicate</p>
         <div>
           <input
             type="text"
@@ -92,6 +101,7 @@ const AddMarkPage: NextPage = () => {
           />
         </div>
         <label>Current Ship:</label>
+        <p>Custom names instead of maps prefered</p>
         <div>
           <input
             type="text"
@@ -142,6 +152,7 @@ const AddMarkPage: NextPage = () => {
           />
         </div>
         <label>Species:</label>
+        <p>Elzuose Human IPC Kepori Moth Phorid Rachnid Sarathi Vox</p>
         <div>
           <input
             type="text"
@@ -152,6 +163,7 @@ const AddMarkPage: NextPage = () => {
           />
         </div>
         <label>Gender:</label>
+        <p>Male Female Non-binary anything else</p>
         <div>
           <input
             type="text"
@@ -162,6 +174,7 @@ const AddMarkPage: NextPage = () => {
           />
         </div>
         <label>Relationship:</label>
+        <p>Single Married Divorced Widowed</p>
         <div>
           <input
             type="text"
@@ -171,6 +184,7 @@ const AddMarkPage: NextPage = () => {
             className="accent-transparent m-1 text-[gray] p-1"
           />
         </div>
+        <p>Keep the formating like this, both have conversions to freedom units</p>
         <label>Height:</label>
         <div>
           <input
@@ -192,6 +206,7 @@ const AddMarkPage: NextPage = () => {
           />
         </div>
         <label>Description:</label>
+        <p>support any html and you can use tailwind classes if you know them. keep in mind this is a description of the character from a solgov spy agency</p>
         <div>
           <input
             type="text"
@@ -201,6 +216,7 @@ const AddMarkPage: NextPage = () => {
             className="accent-transparent m-1 text-[gray] p-1"
           />
         </div>
+        <p>anything you want people to know but not ic. Also include a discord or ckey</p>
         <label>OOC:</label>
         <div>
           <input
