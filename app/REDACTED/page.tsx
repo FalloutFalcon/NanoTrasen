@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 import FactionComponent from "./factions";
-import TableComponent from "./table";
+import TableComponent from "./newTable";
 
 export default function RecordsPage() {
   return (
