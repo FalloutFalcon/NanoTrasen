@@ -4,6 +4,36 @@ import { getMarksData } from "./markData"; // Update the path accordingly
 
 type markKey = "id" | "name" | "position" | "department" | "affiliation";
 
+function SortableHeader({ label, sortConfig, onSort }: SortableHeaderProps) {
+  const isSorted = sortConfig.key === (label.toLowerCase() as markKey);
+  const arrow = isSorted ? (sortConfig.direction === "asc" ? "↑" : "↓") : "";
+
+  return (
+    <th className="border border-slate-500 cursor-pointer" onClick={onSort}>
+      {label} {arrow}
+    </th>
+  );
+}
+
+interface TableCellProps {
+  id: number;
+  info?: string;
+  link?: boolean;
+}
+
+function TableCell({ id, info, link }: TableCellProps) {
+  if (!info) return <td className="border border-slate-500">{id}</td>;
+  else if (link)
+    return (
+      <td className="border border-slate-500 text-solgov-yellow-dark hover:text-solgov-yellow">
+        <Link href={`/REDACTED/marks/${id}`}>
+          <p>{info}</p>
+        </Link>
+      </td>
+    );
+  else return <td className="border border-slate-500">{info}</td>;
+}
+
 export default function TableComponent() {
   const initialMarks = getMarksData();
   const [marks, setMarks] = useState(initialMarks);
@@ -88,15 +118,11 @@ export default function TableComponent() {
         <tbody>
           {marks.map((mark) => (
             <tr key={mark.id}>
-              <td className="border border-slate-500">{mark.id}</td>
-              <td className="border border-slate-500 text-solgov-yellow-dark hover:text-solgov-yellow">
-                <Link href={`/REDACTED/marks/${mark.id}`}>
-                  <p>{mark.name}</p>
-                </Link>
-              </td>
-              <td className="border border-slate-500">{mark.position}</td>
-              <td className="border border-slate-500">{mark.department}</td>
-              <td className="border border-slate-500">{mark.affiliation}</td>
+              <TableCell id={mark.id} />
+              <TableCell id={mark.id} info={mark.name} link />
+              <TableCell id={mark.id} info={mark.position} />
+              <TableCell id={mark.id} info={mark.department} />
+              <TableCell id={mark.id} info={mark.affiliation} />
             </tr>
           ))}
         </tbody>
@@ -109,23 +135,4 @@ interface SortableHeaderProps {
   label: string;
   sortConfig: { key: markKey | null; direction: "asc" | "desc" | null };
   onSort: () => void;
-}
-
-const SortableHeader: React.FC<SortableHeaderProps> = ({
-  label,
-  sortConfig,
-  onSort,
-}) => {
-  const isSorted = sortConfig.key === (label.toLowerCase() as markKey);
-  const arrow = isSorted ? (sortConfig.direction === "asc" ? "↑" : "↓") : "";
-
-  return (
-    <th className="border border-slate-500 cursor-pointer" onClick={onSort}>
-      {label} {arrow}
-    </th>
-  );
-};
-
-function tableCell(info: string) {
-  return <td className="border border-slate-500">{info}</td>;
 }

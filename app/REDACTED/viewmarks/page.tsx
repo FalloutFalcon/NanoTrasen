@@ -22,7 +22,7 @@ export default async function Page() {
           <tr key={mark.id}>
             <td className="border border-slate-500">{mark.id}</td>
             <td className="border border-slate-500 text-solgov-yellow-dark hover:text-solgov-yellow">
-              <Link href={`/REDACTED/Marks/${mark.id}`}>
+              <Link href={`/REDACTED/marks/${mark.id}`}>
                 <p>{mark.name}</p>
               </Link>
             </td>
