@@ -25,7 +25,8 @@ export default async function markDetailPage({
 }: {
   params: { slug: string };
 }) {
-  const marks = await sql`SELECT * FROM Marks`;
+  const markId = parseInt(params.slug);
+  const marks = await sql`SELECT * FROM Marks WHERE id = ${markId}`;
   const mark = marks.rows.find((e) => e.id === parseInt(params.slug));
 
   if (!mark) {
