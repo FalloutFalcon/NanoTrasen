@@ -1,14 +1,24 @@
 "use client";
+import { sql } from "@vercel/postgres";
 import React, { useState } from "react";
 import Link from "next/link";
 
-import { getMarksData } from "./markData"; // Update the path accordingly
-
 type markKey = "id" | "name" | "position" | "department" | "affiliation";
 
-export default function RecordsPage() {
+
+async function getDataFromDatabase() {
+  try {
+    const result = await sql`SELECT * FROM Marks`;
+    return result.rows; // Assuming the rows contain the data you want
+  } catch (error) {
+    console.error("Error fetching data from database:", error);
+    throw new Error("Failed to fetch data from database");
+  }
+}
+
+export default async function RecordsPage() {
   const factions = ["CMM", "Inteq", "Nanotrasen", "SRM", "SolGov", "Syndicate"];
-  const initialMarks = getMarksData();
+  const initialMarks = await getDataFromDatabase();
   const [marks, setMarks] = useState(initialMarks);
   const [sortConfig, setSortConfig] = useState<{
     key: markKey | null;
