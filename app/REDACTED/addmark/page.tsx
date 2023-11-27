@@ -71,46 +71,20 @@ const AddMarkPage: NextPage = () => {
     <div className="flex flex-col text-center">
       <h1>Add Mark Entry</h1>
       <form onSubmit={handleSubmit}>
-        <label>Name:</label>
-        <div>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className="accent-transparent m-1 p-1"
-          />
-        </div>
-        <label>Affiliation:</label>
-        <div>
-          <input
-            type="text"
-            name="affiliation"
-            value={formData.affiliation}
-            onChange={handleChange}
-            className="accent-transparent m-1 p-1"
-          />
-        </div>
-        <label>Date of birth:</label>
-        <div>
-          <input
-            type="text"
-            name="birth"
-            value={formData.dob}
-            onChange={handleChange}
-            className="accent-transparent m-1 p-1"
-          />
-        </div>
-
-        <label>Content:</label>
-        <div>
-          <textarea
-            name="content"
-            value={formData.description}
-            onChange={handleChange}
-            className="accent-transparent m- p-1"
-          />
-        </div>
+        {Object.keys(formData).map((key) => (
+          <div key={key}>
+            <label>{key.charAt(0).toUpperCase() + key.slice(1)}:</label>
+            <div>
+              <input
+                type="text"
+                name={key}
+                value={formData[key as keyof typeof formData]}
+                onChange={handleChange}
+                className="accent-transparent text-[grey] m-1 p-1"
+              />
+            </div>
+          </div>
+        ))}
         <button
           type="submit"
           className="p-2 w-1/12 text-lg text-[white] border-[#006f95] bg-mnps-blue border-r hover:bg-[#80bfd5] hover:text-[#818181]"
