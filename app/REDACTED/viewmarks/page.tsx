@@ -2,11 +2,12 @@ import { sql } from "@vercel/postgres";
 import { QueryResultRow } from "@vercel/postgres";
 import Link from "next/link"; 
 
-export default async function TableComponent() {
+export default async function TablePage() {
   //WTF why does it only work if i have this WHERE statment!! THATS NOT HOW FUCKIN ITS MEANT TO WORK!!!!!!!!!!!
   const marks = await sql`SELECT * FROM Marks WHERE name != 'aaaa'`;
 
   return (
+    <main className="flex flex-col items-center text-center p-5 w-4/5 m-auto">
     <table className="border border-slate-500 w-4/5">
       <thead>
         <tr>
@@ -33,5 +34,6 @@ export default async function TableComponent() {
         ))}
       </tbody>
     </table>
+    </main>
   );
 }
