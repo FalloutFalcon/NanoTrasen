@@ -1,5 +1,3 @@
 export default function NanotrasenPage() {
-    return(
-        <p>Nanotrasen</p>
-    )
+  return <p>Nanotrasen</p>;
 }

@@ -8,10 +8,10 @@ export default function LoginPage() {
 
   const handleLogin = () => {
     const usernameInput = document.getElementById(
-      "username"
+      "username",
     ) as HTMLInputElement | null;
     const passwordInput = document.getElementById(
-      "password"
+      "password",
     ) as HTMLInputElement | null;
 
     if (usernameInput !== null && passwordInput !== null) {

@@ -4,7 +4,9 @@ function HeaderComponent() {
   return (
     <header className="flex flex-col items-center text-center pt-5 w-4/5 m-auto">
       <Link href="/REDACTED">
-        <h1 className="text-xl text-solgov-yellow-dark hover:text-solgov-yellow">Evidenzkompanien Mark Database</h1>
+        <h1 className="text-xl text-solgov-yellow-dark hover:text-solgov-yellow">
+          Evidenzkompanien Mark Database
+        </h1>
       </Link>
     </header>
   );

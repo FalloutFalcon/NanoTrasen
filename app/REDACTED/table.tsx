@@ -69,7 +69,7 @@ export default function TableComponent() {
           return value.toString().includes(event.target.value);
         }
         return false;
-      })
+      }),
     );
     setMarks(filteredMarks);
   };

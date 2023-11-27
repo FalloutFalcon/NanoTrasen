@@ -36,7 +36,8 @@ const formFields: FormField[] = [
   {
     label: "Affiliation:",
     name: "affiliation",
-    placeholder: "Enter affiliation (Indepenant CMM Inteq Nanotrasen SRM SolGov Syndicate)",
+    placeholder:
+      "Enter affiliation (Indepenant CMM Inteq Nanotrasen SRM SolGov Syndicate)",
     fieldType: "text",
   },
   {
@@ -67,7 +68,8 @@ const formFields: FormField[] = [
   {
     label: "Species:",
     name: "species",
-    placeholder: "Enter species (Elzuose Human IPC Kepori Moth Phorid Rachnid Sarathi Vox)",
+    placeholder:
+      "Enter species (Elzuose Human IPC Kepori Moth Phorid Rachnid Sarathi Vox)",
     fieldType: "text",
   },
   {
@@ -85,25 +87,29 @@ const formFields: FormField[] = [
   {
     label: "Height:",
     name: "height",
-    placeholder: "Enter height (# cm conversions to freedom units done on site)",
+    placeholder:
+      "Enter height (# cm conversions to freedom units done on site)",
     fieldType: "text",
   },
   {
     label: "Weight:",
     name: "weight",
-    placeholder: "Enter weight (# kg conversions to freedom units done on site)",
+    placeholder:
+      "Enter weight (# kg conversions to freedom units done on site)",
     fieldType: "text",
   },
   {
     label: "Description:",
     name: "description",
-    placeholder: "Enter description (support any html and you can use tailwind classes if you know them (Message me, _fallcon, and i can teach you how to add cool colors, tables, really anything). keep in mind this is a description of the character from a solgov spy agency)",
+    placeholder:
+      "Enter description (support any html and you can use tailwind classes if you know them (Message me, _fallcon, and i can teach you how to add cool colors, tables, really anything). keep in mind this is a description of the character from a solgov spy agency)",
     fieldType: "textarea",
   },
   {
     label: "OOC:",
     name: "ooc",
-    placeholder: "Enter out-of-character info (anything you want people to know but not ic. Also include a discord or ckey)",
+    placeholder:
+      "Enter out-of-character info (anything you want people to know but not ic. Also include a discord or ckey)",
     fieldType: "text",
   },
 ];
@@ -152,7 +158,7 @@ const AddMarkPage: NextPage = () => {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
@@ -164,7 +170,9 @@ const AddMarkPage: NextPage = () => {
       <form onSubmit={handleSubmit}>
         {formFields.map((field, index) => (
           <div key={index} className="pt-2 mt-2 border-t-2">
-            <div><label className="text-lg font-semibold">{field.label}</label></div>
+            <div>
+              <label className="text-lg font-semibold">{field.label}</label>
+            </div>
             {field.fieldType === "text" ? (
               <input
                 type="text"

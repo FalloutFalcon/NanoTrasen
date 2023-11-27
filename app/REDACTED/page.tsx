@@ -5,7 +5,7 @@ import FactionComponent from "./factions";
 
 export default function RecordsPage() {
   return (
-    <main className="flex flex-col items-center text-center p-5 w-4/5 m-auto">  
+    <main className="flex flex-col items-center text-center p-5 w-4/5 m-auto">
       <FactionComponent />
       <h2 className="text-lg">Marks</h2>
       <div className="flex flex-row mb-4">
