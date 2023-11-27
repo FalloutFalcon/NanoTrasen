@@ -10,7 +10,7 @@ export async function POST(request: Request) {
     }
 
     await sql`
-      INSERT INTO Blogs (name, affiliation, currentShip, department, position, age, dob, species, gender, relationship, height, weight, description, ooc)
+      INSERT INTO Marks (name, affiliation, currentShip, department, position, age, dob, species, gender, relationship, height, weight, description, ooc)
       VALUES (${name}, ${affiliation}, ${currentShip}, ${department}, ${position}, ${age}, ${dob}, ${species}, ${gender}, ${relationship}, ${height}, ${weight}, ${description}, ${ooc});
     `;
 
