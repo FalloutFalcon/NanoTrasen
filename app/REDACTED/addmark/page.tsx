@@ -68,7 +68,7 @@ const AddMarkPage: NextPage = () => {
   };
 
   return (
-    <div className="flex flex-col text-center">
+    <div className="flex flex-col text-center text-[gray]">
       <h1>Add Mark Entry</h1>
       <form onSubmit={handleSubmit}>
         <label>Title:</label>

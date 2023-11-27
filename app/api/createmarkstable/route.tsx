@@ -11,7 +11,7 @@ export async function GET(request: Request) {
         currentShip varchar(255),
         department varchar(255),
         position varchar(255),
-        age integer,
+        age varchar(255),
         dob varchar(255),
         species varchar(255),
         gender varchar(255),
