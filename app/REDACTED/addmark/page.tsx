@@ -68,147 +68,147 @@ const AddMarkPage: NextPage = () => {
   };
 
   return (
-    <div className="flex flex-col text-center text-[gray]">
+    <div className="flex flex-col text-center">
       <h1>Add Mark Entry</h1>
       <form onSubmit={handleSubmit}>
         <label>Title:</label>
         <div>
           <input
             type="text"
-            name="title"
+            name="name"
             value={formData.name}
             onChange={handleChange}
-            className="accent-transparent m-1 p-1"
+            className="accent-transparent m-1 text-[gray] p-1"
           />
         </div>
-        <label>Title:</label>
+        <label>Affiliation:</label>
         <div>
           <input
             type="text"
-            name="title"
+            name="affiliation"
             value={formData.affiliation}
             onChange={handleChange}
-            className="accent-transparent m-1 p-1"
+            className="accent-transparent m-1 text-[gray] p-1"
           />
         </div>
-        <label>Title:</label>
+        <label>Current Ship:</label>
         <div>
           <input
             type="text"
-            name="title"
+            name="currentShip"
             value={formData.currentShip}
             onChange={handleChange}
-            className="accent-transparent m-1 p-1"
+            className="accent-transparent m-1 text-[gray] p-1"
           />
         </div>
-        <label>Title:</label>
+        <label>Department:</label>
         <div>
           <input
             type="text"
-            name="title"
+            name="department"
             value={formData.department}
             onChange={handleChange}
-            className="accent-transparent m-1 p-1"
+            className="accent-transparent m-1 text-[gray] p-1"
           />
         </div>
-        <label>Title:</label>
+        <label>Position:</label>
         <div>
           <input
             type="text"
-            name="title"
+            name="position"
             value={formData.position}
             onChange={handleChange}
-            className="accent-transparent m-1 p-1"
+            className="accent-transparent m-1 text-[gray] p-1"
           />
         </div>
-        <label>Title:</label>
+        <label>Age:</label>
         <div>
           <input
             type="text"
-            name="title"
+            name="age"
             value={formData.age}
             onChange={handleChange}
-            className="accent-transparent m-1 p-1"
+            className="accent-transparent m-1 text-[gray] p-1"
           />
         </div>
-        <label>Title:</label>
+        <label>Date of Birth:</label>
         <div>
           <input
             type="text"
-            name="title"
+            name="dob"
             value={formData.dob}
             onChange={handleChange}
-            className="accent-transparent m-1 p-1"
+            className="accent-transparent m-1 text-[gray] p-1"
           />
         </div>
-        <label>Title:</label>
+        <label>Species:</label>
         <div>
           <input
             type="text"
-            name="title"
+            name="species"
             value={formData.species}
             onChange={handleChange}
-            className="accent-transparent m-1 p-1"
+            className="accent-transparent m-1 text-[gray] p-1"
           />
         </div>
-        <label>Title:</label>
+        <label>Gender:</label>
         <div>
           <input
             type="text"
-            name="title"
+            name="gender"
             value={formData.gender}
             onChange={handleChange}
-            className="accent-transparent m-1 p-1"
+            className="accent-transparent m-1 text-[gray] p-1"
           />
         </div>
-        <label>Title:</label>
+        <label>Relationship:</label>
         <div>
           <input
             type="text"
-            name="title"
+            name="relationship"
             value={formData.relationship}
             onChange={handleChange}
-            className="accent-transparent m-1 p-1"
+            className="accent-transparent m-1 text-[gray] p-1"
           />
         </div>
-        <label>Title:</label>
+        <label>Height:</label>
         <div>
           <input
             type="text"
-            name="title"
+            name="height"
             value={formData.height}
             onChange={handleChange}
-            className="accent-transparent m-1 p-1"
+            className="accent-transparent m-1 text-[gray] p-1"
           />
         </div>
-        <label>Title:</label>
+        <label>Weight:</label>
         <div>
           <input
             type="text"
-            name="title"
+            name="weight"
             value={formData.weight}
             onChange={handleChange}
-            className="accent-transparent m-1 p-1"
+            className="accent-transparent m-1 text-[gray] p-1"
           />
         </div>
-        <label>Title:</label>
+        <label>Description:</label>
         <div>
           <input
             type="text"
-            name="title"
+            name="description"
             value={formData.description}
             onChange={handleChange}
-            className="accent-transparent m-1 p-1"
+            className="accent-transparent m-1 text-[gray] p-1"
           />
         </div>
-        <label>Title:</label>
+        <label>OOC:</label>
         <div>
           <input
             type="text"
-            name="title"
+            name="ooc"
             value={formData.ooc}
             onChange={handleChange}
-            className="accent-transparent m-1 p-1"
+            className="accent-transparent m-1 text-[gray] p-1"
           />
         </div>
         <button
