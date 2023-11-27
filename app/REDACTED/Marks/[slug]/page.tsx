@@ -1,11 +1,10 @@
 import { Metadata } from "next";
+import { sql } from "@vercel/postgres";
 
 export const metadata: Metadata = {
   title: "REDACTED",
   description: "REDACTED",
 };
-
-import { getMarksData } from "../../markData";
 
 // Function to convert height from centimeters to feet and inches
 const convertHeightToImperial = (heightInCm: number): string => {
@@ -21,13 +20,14 @@ const convertWeightToImperial = (weightInKg: number): string => {
   return `${pounds} lbs`;
 };
 
-export default function markDetailPage({
+export default async function markDetailPage({
   params,
 }: {
   params: { slug: string };
 }) {
-  const marks = getMarksData();
-  const mark = marks.find((e) => e.id === parseInt(params.slug));
+  const markId = parseInt(params.slug);
+  const marks = await sql`SELECT * FROM Marks WHERE id = ${markId}`;
+  const mark = marks.rows.find((e) => e.id === parseInt(params.slug));
 
   if (!mark) {
     return (
