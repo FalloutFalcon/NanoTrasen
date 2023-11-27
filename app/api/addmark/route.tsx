@@ -14,7 +14,7 @@ export async function POST(request: Request) {
       VALUES (${name}, ${affiliation}, ${currentShip}, ${department}, ${position}, ${age}, ${dob}, ${species}, ${gender}, ${relationship}, ${height}, ${weight}, ${description}, ${ooc});
     `;
 
-    const blogs = await sql`SELECT * FROM Marks;`;
+    const marks = await sql`SELECT * FROM Marks;`;
 
     return NextResponse.json({ marks }, { status: 201 });
   } catch (error) {

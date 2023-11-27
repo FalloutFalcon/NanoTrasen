@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { NextPage } from "next";
 
-const AddBlogPage: NextPage = () => {
+const AddMarkPage: NextPage = () => {
   const [formData, setFormData] = useState({
     name: "",
     affiliation: "",
@@ -56,7 +56,7 @@ const AddBlogPage: NextPage = () => {
       });
     } catch (error) {
       console.error("Error:", error);
-      alert("Failed to submit blog entry");
+      alert("Failed to submit mark entry");
     }
   };
 
@@ -78,7 +78,7 @@ const AddBlogPage: NextPage = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="accent-transparent m-1  border border-mnps-blue bg-[gray] p-1"
+            className="accent-transparent m-1 p-1"
           />
         </div>
         <label>Affiliation:</label>
@@ -88,7 +88,7 @@ const AddBlogPage: NextPage = () => {
             name="affiliation"
             value={formData.affiliation}
             onChange={handleChange}
-            className="accent-transparent m-1  border border-mnps-blue bg-[gray] p-1"
+            className="accent-transparent m-1 p-1"
           />
         </div>
         <label>Date of birth:</label>
@@ -98,7 +98,7 @@ const AddBlogPage: NextPage = () => {
             name="birth"
             value={formData.dob}
             onChange={handleChange}
-            className="accent-transparent m-1  border border-mnps-blue bg-[gray] p-1"
+            className="accent-transparent m-1 p-1"
           />
         </div>
 
@@ -108,7 +108,7 @@ const AddBlogPage: NextPage = () => {
             name="content"
             value={formData.description}
             onChange={handleChange}
-            className="accent-transparent m-1 border border-mnps-blue bg-[gray] p-1"
+            className="accent-transparent m- p-1"
           />
         </div>
         <button
@@ -122,4 +122,4 @@ const AddBlogPage: NextPage = () => {
   );
 };
 
-export default AddBlogPage;
+export default AddMarkPage;
