@@ -2,12 +2,13 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
+import FactionComponent from "./factions";
+
 import { getMarksData } from "./markData"; // Update the path accordingly
 
 type markKey = "id" | "name" | "position" | "department" | "affiliation";
 
 export default function RecordsPage() {
-  const factions = ["CMM", "Inteq", "Nanotrasen", "SRM", "SolGov", "Syndicate"];
   const initialMarks = getMarksData();
   const [marks, setMarks] = useState(initialMarks);
   const [sortConfig, setSortConfig] = useState<{
@@ -62,16 +63,7 @@ export default function RecordsPage() {
           </p>
         </Link>
       </div>
-      <h2 className="text-lg">Groups of intrest</h2>
-      <div className="flex flex-row mb-4">
-        {factions.map((faction) => (
-          <Link key={faction} href={`/REDACTED/groups/${faction}`}>
-            <p className="border border-slate-500 text-solgov-yellow-dark hover:text-solgov-yellow p-2">
-              {faction}
-            </p>
-          </Link>
-        ))}
-      </div>
+      <FactionComponent />
       <h2 className="pt-5 text-lg">People of intrest</h2>
       <div className="w-4/5">
         <input
@@ -115,6 +107,7 @@ export default function RecordsPage() {
         <tbody>
           {marks.map((mark) => (
             <tr key={mark.id}>
+              <tableCell info={mark.id} />
               <td className="border border-slate-500">{mark.id}</td>
               <td className="border border-slate-500 text-solgov-yellow-dark hover:text-solgov-yellow">
                 <Link href={`/REDACTED/marks/${mark.id}`}>
@@ -152,3 +145,4 @@ const SortableHeader: React.FC<SortableHeaderProps> = ({
     </th>
   );
 };
+
