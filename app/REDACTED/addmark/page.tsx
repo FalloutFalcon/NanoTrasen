@@ -2,31 +2,114 @@
 import { useState } from "react";
 import { NextPage } from "next";
 
+interface FormField {
+  label: string;
+  name: keyof typeof initialFormData;
+  placeholder: string;
+  fieldType: string;
+}
+
+const initialFormData = {
+  name: "",
+  affiliation: "",
+  currentShip: "",
+  department: "",
+  position: "",
+  age: "",
+  dob: "",
+  species: "",
+  gender: "",
+  relationship: "",
+  height: "",
+  weight: "",
+  description: ``,
+  ooc: "",
+};
+
+const formFields: FormField[] = [
+  {
+    label: "Name:",
+    name: "name",
+    placeholder: "Enter name",
+    fieldType: "text",
+  },
+  {
+    label: "Affiliation:",
+    name: "affiliation",
+    placeholder: "Enter affiliation (Indepenant CMM Inteq Nanotrasen SRM SolGov Syndicate)",
+    fieldType: "text",
+  },
+  {
+    label: "Current Ship:",
+    name: "currentShip",
+    placeholder: "Enter current ship (Custom names instead of maps prefered)",
+    fieldType: "text",
+  },
+  {
+    label: "Department:",
+    name: "department",
+    placeholder: "Enter department",
+    fieldType: "text",
+  },
+  {
+    label: "Position:",
+    name: "position",
+    placeholder: "Enter position",
+    fieldType: "text",
+  },
+  { label: "Age:", name: "age", placeholder: "Enter age", fieldType: "text" },
+  {
+    label: "Date of Birth:",
+    name: "dob",
+    placeholder: "Enter date of birth",
+    fieldType: "text",
+  },
+  {
+    label: "Species:",
+    name: "species",
+    placeholder: "Enter species (Elzuose Human IPC Kepori Moth Phorid Rachnid Sarathi Vox)",
+    fieldType: "text",
+  },
+  {
+    label: "Gender:",
+    name: "gender",
+    placeholder: "Enter gender (Male Female Non-binary anything else)",
+    fieldType: "text",
+  },
+  {
+    label: "Relationship:",
+    name: "relationship",
+    placeholder: "Enter relationship status (Single Married Divorced Widowed)",
+    fieldType: "text",
+  },
+  {
+    label: "Height:",
+    name: "height",
+    placeholder: "Enter height (# cm conversions to freedom units done on site)",
+    fieldType: "text",
+  },
+  {
+    label: "Weight:",
+    name: "weight",
+    placeholder: "Enter weight (# kg conversions to freedom units done on site)",
+    fieldType: "text",
+  },
+  {
+    label: "Description:",
+    name: "description",
+    placeholder: "Enter description (support any html and you can use tailwind classes if you know them (Message me, _fallcon, and i can teach you how to add cool colors, tables, really anything). keep in mind this is a description of the character from a solgov spy agency)",
+    fieldType: "textarea",
+  },
+  {
+    label: "OOC:",
+    name: "ooc",
+    placeholder: "Enter out-of-character info (anything you want people to know but not ic. Also include a discord or ckey)",
+    fieldType: "text",
+  },
+];
+
 const AddMarkPage: NextPage = () => {
-  const [formData, setFormData] = useState({
-    name: "Baxter Baxter",
-    affiliation: "SRM",
-    currentShip: "Unknown",
-    department: "Command",
-    position: "Montange",
-    age: "31",
-    dob: "Unknown",
-    species: "Human",
-    gender: "Female",
-    relationship: "Single",
-    height: "165 cm",
-    weight: "49.5 kg",
-    description: `<p>
-    Mark often engages in the trade of an SRM export known as "trickwines." These trickwines are often exchanged for firearms. They display a high level of devotion to the SRM and are often described as a "fanatic."
-  </p>
-  <p>
-    They seem to have served in some sort of war as they have a large number of scars on their body. They also seem to have a considerable amount of combat experience as they are proficient with firearms.
-  </p>
-  <p>
-    Their speech is difficult to understand due to a large amount of damage to their vocal cords, resulting in a coarse voice. They claim to have received it from a "gnarly fight with a xeno."
-  </p>`,
-    ooc: "_fallcon",
-  });
+  const [formData, setFormData] = useState(initialFormData);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -76,165 +159,40 @@ const AddMarkPage: NextPage = () => {
   };
 
   return (
-    <div className="flex flex-col text-center">
-      <h1>Add Mark Entry</h1>
+    <main className="p-5 flex-col w-4/5 m-auto">
+      <h3 className="text-lg">Add Mark Entry</h3>
       <form onSubmit={handleSubmit}>
-        <label>Name:</label>
-        <div>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className="accent-transparent m-1 text-[gray] p-1"
-          />
-        </div>
-        <label>Affiliation:</label>
-        <p>Indepenant CMM Inteq Nanotrasen SRM SolGov Syndicate</p>
-        <div>
-          <input
-            type="text"
-            name="affiliation"
-            value={formData.affiliation}
-            onChange={handleChange}
-            className="accent-transparent m-1 text-[gray] p-1"
-          />
-        </div>
-        <label>Current Ship:</label>
-        <p>Custom names instead of maps prefered</p>
-        <div>
-          <input
-            type="text"
-            name="currentShip"
-            value={formData.currentShip}
-            onChange={handleChange}
-            className="accent-transparent m-1 text-[gray] p-1"
-          />
-        </div>
-        <label>Department:</label>
-        <div>
-          <input
-            type="text"
-            name="department"
-            value={formData.department}
-            onChange={handleChange}
-            className="accent-transparent m-1 text-[gray] p-1"
-          />
-        </div>
-        <label>Position:</label>
-        <div>
-          <input
-            type="text"
-            name="position"
-            value={formData.position}
-            onChange={handleChange}
-            className="accent-transparent m-1 text-[gray] p-1"
-          />
-        </div>
-        <label>Age:</label>
-        <div>
-          <input
-            type="text"
-            name="age"
-            value={formData.age}
-            onChange={handleChange}
-            className="accent-transparent m-1 text-[gray] p-1"
-          />
-        </div>
-        <label>Date of Birth:</label>
-        <div>
-          <input
-            type="text"
-            name="dob"
-            value={formData.dob}
-            onChange={handleChange}
-            className="accent-transparent m-1 text-[gray] p-1"
-          />
-        </div>
-        <label>Species:</label>
-        <p>Elzuose Human IPC Kepori Moth Phorid Rachnid Sarathi Vox</p>
-        <div>
-          <input
-            type="text"
-            name="species"
-            value={formData.species}
-            onChange={handleChange}
-            className="accent-transparent m-1 text-[gray] p-1"
-          />
-        </div>
-        <label>Gender:</label>
-        <p>Male Female Non-binary anything else</p>
-        <div>
-          <input
-            type="text"
-            name="gender"
-            value={formData.gender}
-            onChange={handleChange}
-            className="accent-transparent m-1 text-[gray] p-1"
-          />
-        </div>
-        <label>Relationship:</label>
-        <p>Single Married Divorced Widowed</p>
-        <div>
-          <input
-            type="text"
-            name="relationship"
-            value={formData.relationship}
-            onChange={handleChange}
-            className="accent-transparent m-1 text-[gray] p-1"
-          />
-        </div>
-        <p>Keep the formating like this, both have conversions to freedom units</p>
-        <label>Height:</label>
-        <div>
-          <input
-            type="text"
-            name="height"
-            value={formData.height}
-            onChange={handleChange}
-            className="accent-transparent m-1 text-[gray] p-1"
-          />
-        </div>
-        <label>Weight:</label>
-        <div>
-          <input
-            type="text"
-            name="weight"
-            value={formData.weight}
-            onChange={handleChange}
-            className="accent-transparent m-1 text-[gray] p-1"
-          />
-        </div>
-        <label>Description:</label>
-        <p>support any html and you can use tailwind classes if you know them. keep in mind this is a description of the character from a solgov spy agency</p>
-        <div>
-          <input
-            type="text"
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-            className="accent-transparent m-1 text-[gray] p-1"
-          />
-        </div>
-        <p>anything you want people to know but not ic. Also include a discord or ckey</p>
-        <label>OOC:</label>
-        <div>
-          <input
-            type="text"
-            name="ooc"
-            value={formData.ooc}
-            onChange={handleChange}
-            className="accent-transparent m-1 text-[gray] p-1"
-          />
-        </div>
+        {formFields.map((field, index) => (
+          <div key={index} className="pt-2 mt-2 border-t-2">
+            <div><label className="text-lg font-semibold">{field.label}</label></div>
+            {field.fieldType === "text" ? (
+              <input
+                type="text"
+                name={field.name}
+                value={formData[field.name]}
+                onChange={handleChange}
+                placeholder={field.placeholder}
+                className="p-1 w-full bg-inherit accent-transparent"
+              />
+            ) : (
+              <textarea
+                name={field.name}
+                value={formData[field.name]}
+                onChange={handleChange}
+                placeholder={field.placeholder}
+                className="p-1 w-full bg-inherit accent-transparent"
+              ></textarea>
+            )}
+          </div>
+        ))}
         <button
           type="submit"
-          className="p-2 w-1/12 text-lg text-[white] border-[#006f95] bg-mnps-blue border-r hover:bg-[#80bfd5] hover:text-[#818181]"
+          className="font-bold m-5 p-1 py-2 px-4 border border-slate-500 text-solgov-yellow-dark hover:text-solgov-yellow"
         >
           Submit
         </button>
       </form>
-    </div>
+    </main>
   );
 };
 
