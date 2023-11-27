@@ -24,7 +24,7 @@ const AddMarkPage: NextPage = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("/api/addMark", {
+      const response = await fetch("/api/addmark", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
