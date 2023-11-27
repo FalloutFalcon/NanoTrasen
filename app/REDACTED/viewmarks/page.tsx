@@ -1,12 +1,12 @@
 'use client';
 
 import { sql } from "@vercel/postgres";
-import Link from "next/link"; // Assuming you're using Next.js
+import Link from "next/link"; 
 
 async function getDataFromDatabase() {
   try {
     const result = await sql`SELECT * FROM Marks`;
-    return result.rows; // Assuming the rows contain the data you want
+    return result.rows; 
   } catch (error) {
     console.error("Error fetching data from database:", error);
     throw new Error("Failed to fetch data from database");

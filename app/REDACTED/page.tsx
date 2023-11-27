@@ -1,24 +1,14 @@
 "use client";
-import { sql } from "@vercel/postgres";
 import React, { useState } from "react";
 import Link from "next/link";
 
+import { getMarksData } from "./markData"; // Update the path accordingly
+
 type markKey = "id" | "name" | "position" | "department" | "affiliation";
 
-
-async function getDataFromDatabase() {
-  try {
-    const result = await sql`SELECT * FROM Marks`;
-    return result.rows; // Assuming the rows contain the data you want
-  } catch (error) {
-    console.error("Error fetching data from database:", error);
-    throw new Error("Failed to fetch data from database");
-  }
-}
-
-export default async function RecordsPage() {
+export default function RecordsPage() {
   const factions = ["CMM", "Inteq", "Nanotrasen", "SRM", "SolGov", "Syndicate"];
-  const initialMarks = await getDataFromDatabase();
+  const initialMarks = getMarksData();
   const [marks, setMarks] = useState(initialMarks);
   const [sortConfig, setSortConfig] = useState<{
     key: markKey | null;
@@ -59,6 +49,19 @@ export default async function RecordsPage() {
 
   return (
     <main className="flex flex-col items-center text-center p-5 w-4/5 m-auto">
+      <h2 className="text-lg">Database I hope</h2>
+      <div className="flex flex-row mb-4">
+        <Link href={`/REDACTED/addmark`}>
+          <p className="border border-slate-500 text-solgov-yellow-dark hover:text-solgov-yellow p-2">
+            Add Mark
+          </p>
+        </Link>
+        <Link href={`/REDACTED/viewmarks`}>
+          <p className="border border-slate-500 text-solgov-yellow-dark hover:text-solgov-yellow p-2">
+            View Marks
+          </p>
+        </Link>
+      </div>
       <h2 className="text-lg">Groups of intrest</h2>
       <div className="flex flex-row mb-4">
         {factions.map((faction) => (
