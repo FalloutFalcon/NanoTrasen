@@ -130,22 +130,6 @@ export default async function editMarkPage({
   
   const [formData, setFormData] = useState(initialFormData);
 
-  const handleFetchData = async () => {
-    try {
-      const response = await fetch(`/api/getmark?id=${markId}`);
-      if (!response.ok) {
-        throw new Error("Failed to fetch data");
-      }
-      const data = await response.json();
-      // Update the form data with the fetched data
-      setFormData(data);
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-
-  
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -163,24 +147,8 @@ export default async function editMarkPage({
       }
 
       alert("Mark entry submitted successfully!");
-      // Reset form after successful submission
-      setFormData({
-        id: "",
-        name: "",
-        affiliation: "",
-        currentship: "",
-        department: "",
-        position: "",
-        age: "",
-        dob: "",
-        species: "",
-        gender: "",
-        relationship: "",
-        height: "",
-        weight: "",
-        description: "",
-        ooc: "",
-      });
+      
+      //should push user to created page
     } catch (error) {
       console.error("Error:", error);
       alert("Failed to submit mark entry");
@@ -204,7 +172,7 @@ export default async function editMarkPage({
               <label className="text-lg font-semibold">{field.label}</label>
             </div>
             {field.name === "id" ? (
-              <p>{field.name}</p>
+              <p>{markId}</p>
             ) : (
               <>
                 {field.fieldType === "text" ? (
@@ -234,13 +202,6 @@ export default async function editMarkPage({
           className="font-bold m-5 p-1 py-2 px-4 border border-slate-500 text-solgov-yellow-dark hover:text-solgov-yellow"
         >
           Submit
-        </button>
-        <button
-          type="button" // Use type="button" for the button triggering the data fetch
-          onClick={handleFetchData} // Fetch data onClick
-          className="font-bold m-5 p-1 py-2 px-4 border border-slate-500 text-solgov-yellow-dark hover:text-solgov-yellow"
-        >
-          Fetch Data
         </button>
       </form>
     </main>
