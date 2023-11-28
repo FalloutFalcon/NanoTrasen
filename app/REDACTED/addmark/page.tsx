@@ -10,6 +10,7 @@ interface FormField {
 }
 
 const initialFormData = {
+  id: "",
   name: "",
   affiliation: "",
   currentShip: "",
@@ -27,6 +28,12 @@ const initialFormData = {
 };
 
 const formFields: FormField[] = [
+  {
+    label: "ID:",
+    name: "id",
+    placeholder: "Enter ID",
+    fieldType: "text",
+  },
   {
     label: "Name:",
     name: "name",
@@ -136,6 +143,7 @@ const AddMarkPage: NextPage = () => {
       alert("Mark entry submitted successfully!");
       // Reset form after successful submission
       setFormData({
+        id: "",
         name: "",
         affiliation: "",
         currentShip: "",
@@ -158,7 +166,7 @@ const AddMarkPage: NextPage = () => {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
