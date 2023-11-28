@@ -10,7 +10,7 @@ export default async function TablePage() {
 
   return (
     <main className="flex flex-col items-center text-center p-5 w-4/5 m-auto">
-      <table className="border border-slate-500 w-full md:w-4/5">
+      <table className="border border-slate-500 w-screen md:w-4/5">
         <thead>
           <tr className="flex flex-row">
             <th className="border border-slate-500 w-1/3 md:w-1/5">ID</th>
