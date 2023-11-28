@@ -133,7 +133,7 @@ const AddMarkPage: NextPage = () => {
         throw new Error("Failed to submit data");
       }
 
-      alert("Blog entry submitted successfully!");
+      alert("Mark entry submitted successfully!");
       // Reset form after successful submission
       setFormData({
         name: "",
