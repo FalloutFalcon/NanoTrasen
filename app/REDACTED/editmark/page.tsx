@@ -10,7 +10,7 @@ interface FormField {
 }
 
 const initialFormData = {
-  id: 1,
+  id: "",
   name: "",
   affiliation: "",
   currentship: "",
@@ -32,7 +32,7 @@ const formFields: FormField[] = [
     label: "ID:",
     name: "id",
     placeholder: "Enter ID",
-    fieldType: "number",
+    fieldType: "text",
   },
   {
     label: "Name:",
@@ -121,8 +121,25 @@ const formFields: FormField[] = [
   },
 ];
 
-const EditMarkPage: NextPage = () => {
+const AddMarkPage: NextPage = () => {
   const [formData, setFormData] = useState(initialFormData);
+  const [fetchedData, setFetchedData] = useState(initialFormData); // State to hold fetched data
+
+  const handleFetchData = async () => {
+    try {
+      const response = await fetch(`/api/getmark?id=${formData.id}`);
+      if (!response.ok) {
+        throw new Error("Failed to fetch data");
+      }
+      const data = await response.json();
+      // Update the form data with the fetched data
+      setFetchedData(data);
+      setFormData(data);
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to fetch mark entry");
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -143,7 +160,7 @@ const EditMarkPage: NextPage = () => {
       alert("Mark entry submitted successfully!");
       // Reset form after successful submission
       setFormData({
-        id: 1,
+        id: "",
         name: "",
         affiliation: "",
         currentship: "",
@@ -207,9 +224,16 @@ const EditMarkPage: NextPage = () => {
         >
           Submit
         </button>
+        <button
+          type="button" // Use type="button" for the button triggering the data fetch
+          onClick={handleFetchData} // Fetch data onClick
+          className="font-bold m-5 p-1 py-2 px-4 border border-slate-500 text-solgov-yellow-dark hover:text-solgov-yellow"
+        >
+          Fetch Data
+        </button>
       </form>
     </main>
   );
 };
 
-export default EditMarkPage;
+export default AddMarkPage;

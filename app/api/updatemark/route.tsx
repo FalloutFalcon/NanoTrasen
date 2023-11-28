@@ -21,34 +21,46 @@ export async function POST(request: Request) {
       ooc,
     } = await request.json();
 
-    if (!id) {
-      throw new Error("an ID is required for editing");
+    if (!name) {
+      throw new Error("They need a name");
     }
 
-    await sql`
-        UPDATE Marks
-        SET                         
-        name = ${name},
-        affiliation = ${affiliation},
-        currentship = ${currentship},
-        department = ${department},
-        position = ${position},
-        age = ${age},
-        dob = ${dob},
-        species = ${species},
-        gender = ${gender},
-        relationship = ${relationship},
-        height = ${height},
-        weight = ${weight},
-        description = ${description},
-        ooc = ${ooc}
-        WHERE id = [id];
-    `;
+    let mark;
+    if (id) {
+      // Check if the ID exists in the database
+      const existingMark = await sql`SELECT * FROM Marks WHERE id = ${id};`;
+      if (existingMark.rows.length > 0) {
+        // If the ID exists, update the corresponding entry
+        await sql`
+          UPDATE Marks
+          SET name = ${name},
+              affiliation = ${affiliation},
+              currentship = ${currentship},
+              department = ${department},
+              position = ${position},
+              age = ${age},
+              dob = ${dob},
+              species = ${species},
+              gender = ${gender},
+              relationship = ${relationship},
+              height = ${height},
+              weight = ${weight},
+              description = ${description},
+              ooc = ${ooc}
+          WHERE id = ${id};
+        `;
+      } else {
+        throw new Error("ID does not corispond to a Mark");
+      }
+    } else {
+      // Handle if no ID is provided
+      throw new Error("No ID provided");
+    }
 
-    const marks = await sql`SELECT * FROM Marks;`;
+    mark = await sql`SELECT * FROM Marks WHERE id = ${id};`;
 
-    return NextResponse.json({ marks }, { status: 201 });
+    return NextResponse.json({ mark }, { status: 201 });
   } catch (error) {
-    return NextResponse.json({ error }, { status: 500 });
+    return NextResponse.json({ error: error }, { status: 500 });
   }
 }

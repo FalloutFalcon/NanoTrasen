@@ -30,25 +30,7 @@ export async function POST(request: Request) {
       // Check if the ID exists in the database
       const existingMark = await sql`SELECT * FROM Marks WHERE id = ${id};`;
       if (existingMark.rows.length > 0) {
-        // If the ID exists, update the corresponding entry
-        await sql`
-          UPDATE Marks
-          SET name = ${name},
-              affiliation = ${affiliation},
-              currentship = ${currentship},
-              department = ${department},
-              position = ${position},
-              age = ${age},
-              dob = ${dob},
-              species = ${species},
-              gender = ${gender},
-              relationship = ${relationship},
-              height = ${height},
-              weight = ${weight},
-              description = ${description},
-              ooc = ${ooc}
-          WHERE id = ${id};
-        `;
+        throw new Error("Mark already exists");
       } else {
         // If the ID doesn't exist, insert a new entry
         await sql`
@@ -65,6 +47,6 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ marks }, { status: 201 });
   } catch (error) {
-    return NextResponse.json({ error: error}, { status: 500 });
+    return NextResponse.json({ error: error }, { status: 500 });
   }
 }
