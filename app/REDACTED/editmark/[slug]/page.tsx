@@ -121,25 +121,30 @@ const formFields: FormField[] = [
   },
 ];
 
-const AddMarkPage: NextPage = () => {
+export default async function editMarkPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const markId = parseInt(params.slug);
+  
   const [formData, setFormData] = useState(initialFormData);
-  const [fetchedData, setFetchedData] = useState(initialFormData); // State to hold fetched data
 
   const handleFetchData = async () => {
     try {
-      const response = await fetch(`/api/getmark?id=${formData.id}`);
+      const response = await fetch(`/api/getmark?id=${markId}`);
       if (!response.ok) {
         throw new Error("Failed to fetch data");
       }
       const data = await response.json();
       // Update the form data with the fetched data
-      setFetchedData(data);
       setFormData(data);
     } catch (error) {
       console.error("Error:", error);
-      alert("Failed to fetch mark entry");
     }
   };
+
+  
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -183,7 +188,7 @@ const AddMarkPage: NextPage = () => {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
@@ -198,23 +203,29 @@ const AddMarkPage: NextPage = () => {
             <div>
               <label className="text-lg font-semibold">{field.label}</label>
             </div>
-            {field.fieldType === "text" ? (
-              <input
-                type="text"
-                name={field.name}
-                value={formData[field.name]}
-                onChange={handleChange}
-                placeholder={field.placeholder}
-                className="p-1 w-full bg-inherit accent-transparent"
-              />
+            {field.name === "id" ? (
+              <p>{field.name}</p>
             ) : (
-              <textarea
-                name={field.name}
-                value={formData[field.name]}
-                onChange={handleChange}
-                placeholder={field.placeholder}
-                className="p-1 w-full bg-inherit accent-transparent"
-              ></textarea>
+              <>
+                {field.fieldType === "text" ? (
+                  <input
+                    type="text"
+                    name={field.name}
+                    value={formData[field.name]}
+                    onChange={handleChange}
+                    placeholder={field.placeholder}
+                    className="p-1 w-full bg-inherit accent-transparent"
+                  />
+                ) : (
+                  <textarea
+                    name={field.name}
+                    value={formData[field.name]}
+                    onChange={handleChange}
+                    placeholder={field.placeholder}
+                    className="p-1 w-full bg-inherit accent-transparent"
+                  ></textarea>
+                )}
+              </>
             )}
           </div>
         ))}
@@ -234,6 +245,4 @@ const AddMarkPage: NextPage = () => {
       </form>
     </main>
   );
-};
-
-export default AddMarkPage;
+}
