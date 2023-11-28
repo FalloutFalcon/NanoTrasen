@@ -10,7 +10,7 @@ export default async function TablePage() {
 
   return (
     <main className="flex flex-col items-center text-center p-5 w-4/5 m-auto">
-      <table className="border border-slate-500 w-1/3 md:w-4/5">
+      <table className="border border-slate-500 w-1/2 md:w-4/5">
         <thead>
           <tr>
             <th className="border border-slate-500">ID</th>
@@ -23,7 +23,7 @@ export default async function TablePage() {
         <tbody>
           {marks.rows &&
             marks.rows.map((mark: QueryResultRow) => (
-              <tr key={mark.id} className="break-all md:break-normal ">
+              <tr key={mark.id} className="break-all tracking-tighter md:break-normal md:tracking-normal">
                 <td className="border border-slate-500">{mark.id}</td>
                 <td className="border border-slate-500 break-normal text-solgov-yellow-dark hover:text-solgov-yellow">
                   <Link href={`/REDACTED/marks/${mark.id}`}>
