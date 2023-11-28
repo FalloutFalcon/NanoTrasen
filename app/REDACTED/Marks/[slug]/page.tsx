@@ -9,17 +9,23 @@ export const metadata: Metadata = {
 export const revalidate = 0;
 
 // Function to convert height from centimeters to feet and inches
-const convertHeightToImperial = (heightInCm: number): string => {
+const convertHeightToImperial = (heightInCm: number): string | undefined => {
   const totalInches = heightInCm / 2.54;
   const feet = Math.floor(totalInches / 12);
   const inches = Math.floor(totalInches % 12);
-  return `${feet}' ${inches}"`;
+  if (isNaN(feet) && isNaN(inches)) {
+    return ``; // Return nothing if pounds is NaN
+  }
+  return `(${feet}' ${inches}")`;
 };
 
 // Function to convert weight from kilograms to pounds
 const convertWeightToImperial = (weightInKg: number): string => {
   const pounds = Math.floor(weightInKg * 2.20462);
-  return `${pounds} lbs`;
+  if (isNaN(pounds)) {
+    return ``; // Return nothing if pounds is NaN
+  }
+  return `(${pounds} lbs)`;
 };
 
 export default async function markDetailPage({
@@ -48,21 +54,41 @@ export default async function markDetailPage({
     { label: "Name", value: mark.name },
     { label: "Faction Affiliation", value: mark.affiliation },
     {
-      label: "Vessel, Deparment, & Title",
-      value: `${mark.currentShip}, ${mark.department}, ${mark.position}`,
+      label: "Vessel",
+      value: mark.currentship,
     },
     {
-      label: "Age & Date of birth",
-      value: `${mark.age}, ${mark.dob}`,
+      label: "Deparment",
+      value: mark.department,
+    },
+    {
+      label: "Title",
+      value: mark.position,
+    },
+    {
+      label: "Age",
+      value: mark.age,
+    },
+    {
+      label: "Date of birth",
+      value: mark.dob,
     },
     { label: "Species", value: mark.species },
     {
-      label: "Gender & Relationship Status",
-      value: `${mark.gender}, ${mark.relationship}`,
+      label: "Gender",
+      value: mark.gender,
     },
     {
-      label: "Height & Weight",
-      value: `${mark.height} (${heightImperial}), ${mark.weight} (${weightImperial})`,
+      label: "Relationship Status",
+      value: mark.relationship,
+    },
+    {
+      label: "Height",
+      value: `${mark.height} ${heightImperial}`,
+    },
+    {
+      label: "Weight",
+      value: `${mark.weight} ${weightImperial}`,
     },
     { label: "Details", value: mark.description },
   ];
