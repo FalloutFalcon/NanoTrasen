@@ -41,10 +41,10 @@ export default async function TablePage() {
                     <p>{mark.name}</p>
                   </Link>
                 </td>
-                <td className="border border-slate-500 line-clamp-1 hidden md:w-1/5 md:table-cell text-xs md:text-base">
+                <td className="border border-slate-500 line-clamp-1 hidden md:w-1/5 md:table-cell">
                   {mark.position}
                 </td>
-                <td className="border border-slate-500 line-clamp-1 hidden md:w-1/5 md:table-cell text-xs md:text-base">
+                <td className="border border-slate-500 line-clamp-1 hidden md:w-1/5 md:table-cell">
                   {mark.department}
                 </td>
                 <td className="border border-slate-500 line-clamp-1 w-1/3 md:w-1/5 text-xs md:text-base">
