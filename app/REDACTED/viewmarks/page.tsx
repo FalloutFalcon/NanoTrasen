@@ -9,27 +9,61 @@ async function fetchMarksFromDatabase() {
   return marks;
 }
 
-function renderTableRow(mark: QueryResultRow) {
-  let reusedStyle = "border border-slate-500 line-clamp-1 md:w-1/5";
+function TableCell({
+  id,
+  type,
+  content,
+  style,
+}: {
+  id: number;
+  type: string;
+  content: string;
+  style: string;
+}) {
+  if (type === "name") {
+    return (
+      <td className={style}>
+        <Link href={`/REDACTED/marks/${id}`}>{content}</Link>
+      </td>
+    );
+  }
+  return <td className={style}>{content}</td>;
+}
+
+function TableRow({ mark }: { mark: QueryResultRow }) {
+  const reusedStyle = "border border-slate-500 line-clamp-1 md:w-1/5";
   return (
     <tr key={mark.id} className="break-all md:break-normal flex flex-row">
-      <td className={`${reusedStyle} w-1/6`}>
-        {mark.id}
-      </td>
-      <td className={`${reusedStyle} w-1/2 md:w-1/5 break-normal text-solgov-yellow-dark hover:text-solgov-yellow`}>
-        <Link href={`/REDACTED/marks/${mark.id}`}>
-          <p>{mark.name}</p>
-        </Link>
-      </td>
-      <td className={`${reusedStyle} hidden md:w-1/5 md:table-cell`}>
-        {mark.position}
-      </td>
-      <td className={`${reusedStyle} hidden md:w-1/5 md:table-cell`}>
-        {mark.department}
-      </td>
-      <td className={`${reusedStyle} w-1/3 md:w-1/5 text-xs md:text-base`}>
-        {mark.affiliation}
-      </td>
+      <TableCell
+        id={mark.id}
+        type="id"
+        content={mark.id}
+        style={`${reusedStyle} w-1/6`}
+      />
+      <TableCell
+        id={mark.id}
+        type="name"
+        content={mark.name}
+        style={`${reusedStyle} w-1/2 break-normal text-solgov-yellow-dark hover:text-solgov-yellow`}
+      />
+      <TableCell
+        id={mark.id}
+        type="position"
+        content={mark.position}
+        style={`${reusedStyle} hidden md:table-cell`}
+      />
+      <TableCell
+        id={mark.id}
+        type="department"
+        content={mark.department}
+        style={`${reusedStyle} hidden md:table-cell`}
+      />
+      <TableCell
+        id={mark.id}
+        type="affiliation"
+        content={mark.affiliation}
+        style={`${reusedStyle} w-1/3 text-xs md:text-base`}
+      />
     </tr>
   );
 }
@@ -57,7 +91,9 @@ export default async function TablePage() {
         </thead>
         <tbody>
           {marks.rows &&
-            marks.rows.map((mark: QueryResultRow) => renderTableRow(mark))}
+            marks.rows.map((mark: QueryResultRow) => (
+              <TableRow key={mark.id} mark={mark} />
+            ))}
         </tbody>
       </table>
     </main>
