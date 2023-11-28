@@ -1,11 +1,12 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { sql } from '@vercel/postgres';
+import { NextResponse } from 'next/server';
 
-export default async function Handler(req: NextApiRequest, res: NextApiResponse) {
+export async function GET(req: NextApiRequest, res: NextApiResponse) {
   const { searchParams } = new URL(req.url as string);
   const id = searchParams.get('id');
   if (req.method !== 'GET') {
-    return res.status(405).json({ message: 'Method Not Allowed' });
+    return NextResponse.json({ message: 'Invalid method' }, { status: 405 });
   }
 
   try {
@@ -16,12 +17,12 @@ export default async function Handler(req: NextApiRequest, res: NextApiResponse)
     const mark = await sql`SELECT * FROM Marks WHERE id = ${id};`;
 
     if (mark.rows.length === 0) {
-      return res.status(404).json({ message: 'Mark not found' });
+      return NextResponse.json({ message: 'Mark not found' }, { status: 404 });
     }
 
-    return res.status(200).json(mark.rows[0]); // Returning the fetched mark
+    return NextResponse.json(mark.rows[0], { status: 200 }); // Returning the fetched mark
   } catch (error) {
     console.error('Error:', error);
-    return res.status(500).json({ error: 'Failed to fetch mark entry' });
+    return NextResponse.json({ error: 'Failed to fetch mark entry' }, { status: 500 });
   }
 }

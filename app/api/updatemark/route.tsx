@@ -7,7 +7,7 @@ export async function POST(request: Request) {
       id,
       name,
       affiliation,
-      currentShip,
+      currentship,
       department,
       position,
       age,
@@ -30,7 +30,7 @@ export async function POST(request: Request) {
         SET                         
         name = ${name},
         affiliation = ${affiliation},
-        currentShip = ${currentShip},
+        currentship = ${currentship},
         department = ${department},
         position = ${position},
         age = ${age},

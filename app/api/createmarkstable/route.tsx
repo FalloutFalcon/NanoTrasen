@@ -8,7 +8,7 @@ export async function GET(request: Request) {
         id SERIAL PRIMARY KEY,
         name varchar(255),
         affiliation varchar(255),
-        currentShip varchar(255),
+        currentship varchar(255),
         department varchar(255),
         position varchar(255),
         age varchar(255),

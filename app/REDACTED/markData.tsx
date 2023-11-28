@@ -7,7 +7,7 @@ export function getMarksData() {
       // Indepenant CMM Inteq Nanotrasen SRM SolGov Syndicate
       affiliation: "SRM",
       // Custom names instead of maps prefered
-      currentShip: "Unknown",
+      currentship: "Unknown",
       department: "Command",
       position: "Montange",
       age: 31,
@@ -41,7 +41,7 @@ export function getMarksData() {
       id: 736695831,
       name: "Gabriel Moon",
       affiliation: "Independent",
-      currentShip: "Unknown",
+      currentship: "Unknown",
       department: "Engineering",
       position: "Ship Engineer/Salvage Engineer",
       age: "22",
@@ -64,7 +64,7 @@ export function getMarksData() {
       id: 111111111,
       name: "Unknown",
       affiliation: "Unknown",
-      currentShip: "Unknown",
+      currentship: "Unknown",
       department: "Unknown",
       position: "Unknown",
       age: "Unknown",

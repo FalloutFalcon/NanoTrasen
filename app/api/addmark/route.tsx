@@ -7,7 +7,7 @@ export async function POST(request: Request) {
       id,
       name,
       affiliation,
-      currentShip,
+      currentship,
       department,
       position,
       age,
@@ -35,7 +35,7 @@ export async function POST(request: Request) {
           UPDATE Marks
           SET name = ${name},
               affiliation = ${affiliation},
-              currentShip = ${currentShip},
+              currentship = ${currentship},
               department = ${department},
               position = ${position},
               age = ${age},
@@ -52,8 +52,8 @@ export async function POST(request: Request) {
       } else {
         // If the ID doesn't exist, insert a new entry
         await sql`
-          INSERT INTO Marks (id, name, affiliation, currentShip, department, position, age, dob, species, gender, relationship, height, weight, description, ooc)
-          VALUES (${id}, ${name}, ${affiliation}, ${currentShip}, ${department}, ${position}, ${age}, ${dob}, ${species}, ${gender}, ${relationship}, ${height}, ${weight}, ${description}, ${ooc});
+          INSERT INTO Marks (id, name, affiliation, currentship, department, position, age, dob, species, gender, relationship, height, weight, description, ooc)
+          VALUES (${id}, ${name}, ${affiliation}, ${currentship}, ${department}, ${position}, ${age}, ${dob}, ${species}, ${gender}, ${relationship}, ${height}, ${weight}, ${description}, ${ooc});
         `;
       }
     } else {
