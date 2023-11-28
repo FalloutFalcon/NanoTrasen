@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   description: "REDACTED",
 };
 
+export const revalidate = 0;
+
 // Function to convert height from centimeters to feet and inches
 const convertHeightToImperial = (heightInCm: number): string => {
   const totalInches = heightInCm / 2.54;
