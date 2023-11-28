@@ -224,13 +224,6 @@ const AddMarkPage: NextPage = () => {
         >
           Submit
         </button>
-        <button
-          type="button" // Use type="button" for the button triggering the data fetch
-          onClick={handleFetchData} // Fetch data onClick
-          className="font-bold m-5 p-1 py-2 px-4 border border-slate-500 text-solgov-yellow-dark hover:text-solgov-yellow"
-        >
-          Fetch Data
-        </button>
       </form>
     </main>
   );
