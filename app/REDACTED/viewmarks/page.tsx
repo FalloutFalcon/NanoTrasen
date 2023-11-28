@@ -13,8 +13,8 @@ export default async function TablePage() {
       <table className="border border-slate-500 w-screen md:w-4/5">
         <thead>
           <tr className="flex flex-row">
-            <th className="border border-slate-500 w-1/3 md:w-1/5">ID</th>
-            <th className="border border-slate-500 w-1/3 md:w-1/5">Name</th>
+            <th className="border border-slate-500 w-1/6 md:w-1/5">ID</th>
+            <th className="border border-slate-500 w-1/2 md:w-1/5">Name</th>
             <th className="border border-slate-500 hidden md:w-1/5 md:table-cell">
               Position
             </th>
@@ -33,10 +33,10 @@ export default async function TablePage() {
                 key={mark.id}
                 className="break-all md:break-normal flex flex-row"
               >
-                <td className="border border-slate-500 line-clamp-1 w-1/3 md:w-1/5">
+                <td className="border border-slate-500 line-clamp-1 w-1/6 md:w-1/5">
                   {mark.id}
                 </td>
-                <td className="border border-slate-500 line-clamp-1 w-1/3 md:w-1/5 break-normal text-solgov-yellow-dark hover:text-solgov-yellow">
+                <td className="border border-slate-500 line-clamp-1 w-1/2 md:w-1/5 break-normal text-solgov-yellow-dark hover:text-solgov-yellow">
                   <Link href={`/REDACTED/marks/${mark.id}`}>
                     <p>{mark.name}</p>
                   </Link>
