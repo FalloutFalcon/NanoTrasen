@@ -13,11 +13,11 @@ export default async function TablePage() {
       <table className="border border-slate-500 w-1/2 md:w-4/5">
         <thead>
           <tr>
-            <th className="border border-slate-500">ID</th>
-            <th className="border border-slate-500">Name</th>
-            <th className="border border-slate-500">Position</th>
-            <th className="border border-slate-500">Department</th>
-            <th className="border border-slate-500">Affiliation</th>
+            <th className="border border-slate-500 text-ellipsis text-xs md:text-base">ID</th>
+            <th className="border border-slate-500 text-ellipsis text-xs md:text-base">Name</th>
+            <th className="border border-slate-500 text-ellipsis text-xs md:text-base">Position</th>
+            <th className="border border-slate-500 text-ellipsis text-xs md:text-base">Department</th>
+            <th className="border border-slate-500 text-ellipsis text-xs md:text-base">Affiliation</th>
           </tr>
         </thead>
         <tbody>
