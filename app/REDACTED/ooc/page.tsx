@@ -12,6 +12,7 @@ export default function OocPage() {
         Keep in mind when writing its meant to be a TOP SECRET database from a
         division of solgov spys
       </p>
+      <p>In character, This is a incomplete and flawwed database, expect agents to get even basic facts wrong and dont expect the lore to line up, Alot of the entrys are made from second hand information or untrustworthly sources.</p>
       <p className="pt-10"> Todo. </p>
       <div className="text-left">
         <p> - Add a way to edit/remove a mark. </p>
