@@ -23,16 +23,16 @@ export default async function TablePage() {
         <tbody>
           {marks.rows &&
             marks.rows.map((mark: QueryResultRow) => (
-              <tr key={mark.id} className="break-all tracking-tighter md:break-normal md:tracking-normal">
+              <tr key={mark.id}>
                 <td className="border border-slate-500">{mark.id}</td>
-                <td className="border border-slate-500 break-normal text-solgov-yellow-dark hover:text-solgov-yellow">
+                <td className="border border-slate-500 text-solgov-yellow-dark hover:text-solgov-yellow">
                   <Link href={`/REDACTED/marks/${mark.id}`}>
                     <p>{mark.name}</p>
                   </Link>
                 </td>
-                <td className="border border-slate-500 text-xs md:text-base">{mark.position}</td>
-                <td className="border border-slate-500 text-xs md:text-base">{mark.department}</td>
-                <td className="border border-slate-500 text-xs md:text-base">{mark.affiliation}</td>
+                <td className="border border-slate-500 text-ellipsis text-xs md:text-base">{mark.position}</td>
+                <td className="border border-slate-500 text-ellipsis text-xs md:text-base">{mark.department}</td>
+                <td className="border border-slate-500 text-ellipsis text-xs md:text-base">{mark.affiliation}</td>
               </tr>
             ))}
         </tbody>
