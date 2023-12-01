@@ -3,6 +3,8 @@ import "./globals.css";
 
 import { Analytics } from "@vercel/analytics/react";
 
+export const revalidate = 600;
+
 export const metadata: Metadata = {
   title: "Solgov",
   description: "Company website for Solgov",
