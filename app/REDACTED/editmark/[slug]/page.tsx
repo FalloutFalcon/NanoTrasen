@@ -126,84 +126,10 @@ export default async function editMarkPage({
 }: {
   params: { slug: string };
 }) {
-  const markId = parseInt(params.slug);
-  
-  const [formData, setFormData] = useState(initialFormData);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    try {
-      const response = await fetch("/api/updatemark", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to submit data");
-      }
-
-      alert("Mark entry submitted successfully!");
-      
-      //should push user to created page
-    } catch (error) {
-      console.error("Error:", error);
-      alert("Failed to submit mark entry");
-    }
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({ ...prevState, [name]: value }));
-  };
 
   return (
     <main className="p-5 flex-col w-4/5 m-auto">
-      <h3 className="text-lg">Add Mark Entry</h3>
-      <form onSubmit={handleSubmit}>
-        {formFields.map((field, index) => (
-          <div key={index} className="pt-2 mt-2 border-t-2">
-            <div>
-              <label className="text-lg font-semibold">{field.label}</label>
-            </div>
-            {field.name === "id" ? (
-              <p>{markId}</p>
-            ) : (
-              <>
-                {field.fieldType === "text" ? (
-                  <input
-                    type="text"
-                    name={field.name}
-                    value={formData[field.name]}
-                    onChange={handleChange}
-                    placeholder={field.placeholder}
-                    className="p-1 w-full bg-inherit accent-transparent"
-                  />
-                ) : (
-                  <textarea
-                    name={field.name}
-                    value={formData[field.name]}
-                    onChange={handleChange}
-                    placeholder={field.placeholder}
-                    className="p-1 w-full bg-inherit accent-transparent"
-                  ></textarea>
-                )}
-              </>
-            )}
-          </div>
-        ))}
-        <button
-          type="submit"
-          className="font-bold m-5 p-1 py-2 px-4 border border-slate-500 text-solgov-yellow-dark hover:text-solgov-yellow"
-        >
-          Submit
-        </button>
-      </form>
+      <p>Fix Asap</p>
     </main>
   );
 }
