@@ -29,11 +29,6 @@ export default function DefaultPage() {
           dedication.
         </p>
 
-        <p className="mb-4">
-          Additional Information: &quot;This shit is Propaganda&quot; Marked by:
-          &quot;Fallcon&quot;
-        </p>
-
         <h2 className="text-2xl font-bold mb-2">Our History</h2>
 
         <p>

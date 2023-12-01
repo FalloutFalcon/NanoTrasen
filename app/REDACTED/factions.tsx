@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 function FactionsComponent() {
-  const factions = ["CMM", "Inteq", "Nanotrasen", "SRM", "SolGov", "Syndicate"];
+  const factions = ["CMM", "Inteq", "Nanotrasen", "SRM", "Syndicate"];
   return (
     <div>
       <h2 className="text-lg">Groups of intrest</h2>
