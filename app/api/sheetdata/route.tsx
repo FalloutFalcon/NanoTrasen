@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import axios from "axios";
 
+import { FormattedMarkRelations } from "../../types";
+
 const apiKey = "AIzaSyBoNUkHydnkhbi9utB2si8Iv7RBsKOQsm8";
 const spreadsheetId = "19NHUy98-C7Z6Cz97u9F2XpgcbOd_QxBtn2SGMS0E-iE";
 const range = "Manifest!A4:BQ72"; // Adjust range as needed
@@ -22,7 +24,7 @@ export async function GET() {
 
     // Transform the data
     const characters = values[0].slice(1); // Extract character names from the first row
-    const formattedData = {};
+    const formattedData: FormattedMarkRelations = {};
 
     for (let i = 1; i < values.length; i++) {
       const character1 = values[i][0];
