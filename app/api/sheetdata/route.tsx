@@ -1,13 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import axios from "axios";
 
 import { FormattedMarkRelations } from "../../types";
 
 const apiKey = "AIzaSyBoNUkHydnkhbi9utB2si8Iv7RBsKOQsm8";
 const spreadsheetId = "19NHUy98-C7Z6Cz97u9F2XpgcbOd_QxBtn2SGMS0E-iE";
-const range = "Manifest!A4:BQ72"; // Adjust range as needed
+const range = "Manifest!A4:BQ72";
 
-//const sheetsUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?includeGridData=true&ranges=${range}&key=${apiKey}`;
 const valuesUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`;
 
 export async function GET(req: NextRequest, res: NextResponse) {
@@ -46,7 +44,9 @@ export async function GET(req: NextRequest, res: NextResponse) {
       }
     }
 
-    return NextResponse.json(formattedData);
+    const sortedEntries = Object.entries(formattedData).sort(([a], [b]) => a.localeCompare(b));
+
+    return NextResponse.json(sortedEntries);
   } catch (error) {
     console.error("Error fetching data:", error);
     return NextResponse.json({ error: "Error fetching data" }, { status: 500 });
