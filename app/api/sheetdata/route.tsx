@@ -12,17 +12,14 @@ const valuesUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId
 
 export async function GET() {
   try {
-    const valuesResponse = await axios.get(valuesUrl);
-    //const formattingResponse = await axios.get(sheetsUrl);
+    const valuesResponse = await fetch(valuesUrl);
 
-    const values = valuesResponse.data.values;
-    //const sheetsData = formattingResponse.data.sheets?.[0]?.data?.[0];
+    if (!valuesResponse.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const valuesData = await valuesResponse.json();
+    const values = valuesData.values;
 
-    //console.log('Formatting Response:', sheetsData.rowData[1].values); // Log the response
-
-    // Extract cell formatting
-
-    // Transform the data
     const characters = values[0].slice(1); // Extract character names from the first row
     const formattedData: FormattedMarkRelations = {};
 

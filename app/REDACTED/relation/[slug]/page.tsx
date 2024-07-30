@@ -1,8 +1,19 @@
-import axios from "axios";
-
 import Link from "next/link";
 
 import { Relationship, FormattedMarkRelations } from "../../../types";
+
+async function getData() {
+  const res = await fetch("https://solgov.vercel.app/api/sheetdata");
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
 
 export default async function markRelationPage({
   params,
@@ -10,8 +21,7 @@ export default async function markRelationPage({
   params: { slug: string };
 }) {
   const markSlug = decodeURI(params.slug as string);
-  const response = await axios.get("https://solgov.vercel.app/api/sheetdata");
-  const data: FormattedMarkRelations = response.data;
+  const data: FormattedMarkRelations = await getData();
   const markData = data[markSlug] || [];
 
   return (
@@ -60,7 +70,7 @@ const MarkRelationComponent: React.FC<ComponentProps> = ({
             <td className="border border-slate-500">
               {data[relation.character]?.find(
                 (markRelationship: Relationship) =>
-                  markRelationship.character === markSlug
+                  markRelationship.character === markSlug,
               )?.opinion || "N/A"}
             </td>
           </tr>
