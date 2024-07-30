@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "MARK RELATION DATA",
 };
 
-export const revalidate = 100
+export const revalidate = 100;
 
 async function getData() {
   const res = await fetch("https://solgov.vercel.app/api/sheetdata");
@@ -21,13 +21,13 @@ async function getData() {
 
 export default async function RelationsPage() {
   const data = await getData();
-  const marks = Object.keys(data);
 
+  const sortedCharacterNames = Object.keys(data).sort();
   return (
     <div>
       <h1>Mark List</h1>
       <ul>
-        {marks.map((character, index) => (
+        {sortedCharacterNames.map((character, index) => (
           <li key={index}>
             <Link
               className="text-solgov-yellow-dark hover:text-solgov-yellow"
