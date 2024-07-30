@@ -5,8 +5,6 @@ import Link from "next/link";
 
 import solgovFlag from "/public/static/images/SolGov_flag.png";
 
-export const revalidate = 600;
-
 export default function DefaultPage() {
   return (
     <div className="min-h-screen">

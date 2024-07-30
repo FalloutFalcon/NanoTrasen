@@ -2,7 +2,6 @@ import { sql } from "@vercel/postgres";
 import { QueryResultRow } from "@vercel/postgres";
 import Link from "next/link";
 
-export const revalidate = 0;
 
 async function fetchMarksFromDatabase() {
   const marks = await sql`SELECT * FROM Marks WHERE name != 'aaaa'`;
