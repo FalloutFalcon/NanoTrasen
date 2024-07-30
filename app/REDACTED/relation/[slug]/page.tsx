@@ -16,7 +16,7 @@ export default async function markRelationPage({
 
   return (
     <main className="flex flex-col items-center text-center p-5 w-4/5 m-auto">
-      <h1>{markSlug}'s Relations</h1>
+      <h1>{markSlug}&apos;s Relations</h1>
       <table className="border border-slate-500 w-4/5">
         <thead>
           <tr>
