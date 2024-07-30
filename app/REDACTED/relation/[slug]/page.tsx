@@ -3,13 +3,10 @@ import Link from "next/link";
 import { Relationship, FormattedMarkRelations } from "../../../types";
 
 async function getData() {
-  const res = await fetch("https://solgov.vercel.app/api/sheetdata");
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
+  const res = await fetch(`https://solgov.vercel.app/api/sheetdata`);
 
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
+    throw new Error("Failed to fetch mark relations");
   }
 
   return res.json();
@@ -70,7 +67,7 @@ const MarkRelationComponent: React.FC<ComponentProps> = ({
             <td className="border border-slate-500">
               {data[relation.character]?.find(
                 (markRelationship: Relationship) =>
-                  markRelationship.character === markSlug,
+                  markRelationship.character === markSlug
               )?.opinion || "N/A"}
             </td>
           </tr>

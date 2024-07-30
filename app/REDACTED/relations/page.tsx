@@ -2,12 +2,9 @@ import Link from "next/link";
 
 async function getData() {
   const res = await fetch("https://solgov.vercel.app/api/sheetdata");
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
 
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
+    throw new Error("Failed to fetch mark relations");
   }
 
   return res.json();

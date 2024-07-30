@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import axios from "axios";
 
 import { FormattedMarkRelations } from "../../types";
@@ -10,7 +10,7 @@ const range = "Manifest!A4:BQ72"; // Adjust range as needed
 //const sheetsUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?includeGridData=true&ranges=${range}&key=${apiKey}`;
 const valuesUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`;
 
-export async function GET() {
+export async function GET(req: NextRequest, res: NextResponse) {
   try {
     const valuesResponse = await fetch(valuesUrl);
 
