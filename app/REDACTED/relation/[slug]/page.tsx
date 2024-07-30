@@ -2,6 +2,8 @@ import Link from "next/link";
 
 import { Relationship, FormattedMarkRelations } from "../../../types";
 
+export const revalidate = 100
+
 async function getData() {
   const res = await fetch(`https://solgov.vercel.app/api/sheetdata`);
 

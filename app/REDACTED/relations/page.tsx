@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: "MARK RELATION DATA",
 };
 
+export const revalidate = 100
+
 async function getData() {
   const res = await fetch("https://solgov.vercel.app/api/sheetdata");
 
