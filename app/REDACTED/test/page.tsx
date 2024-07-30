@@ -2,7 +2,7 @@ import axios from "axios";
 import Link from "next/link";
 
 export default async function TestPage() {
-  const res = await axios.get("http://localhost:3000/api/sheetdata");
+  const res = await axios.get("https://solgov.vercel.app/api/sheetdata");
   const data = res.data;
   const marks = Object.keys(data);
 

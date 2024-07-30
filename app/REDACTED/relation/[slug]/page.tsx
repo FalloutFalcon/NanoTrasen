@@ -10,8 +10,8 @@ export default async function markRelationPage({
   params: { slug: string };
 }) {
   const markSlug = decodeURI(params.slug as string);
-  const response = await axios.get("http://localhost:3000/api/sheetdata");
-  const data = response.data;
+  const response = await axios.get("https://solgov.vercel.app/api/sheetdata");
+  const data: FormattedMarkRelations = response.data;
   const markData = data[markSlug] || [];
 
   return (
