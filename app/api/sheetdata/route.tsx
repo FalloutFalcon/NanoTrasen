@@ -37,6 +37,15 @@ export async function GET(req: NextRequest, res: NextResponse) {
       }
     }
 
+    // Sort each array of relationships
+    for (const key in formattedData) {
+      if (formattedData[key]) {
+        formattedData[key].sort((a, b) =>
+          a.character.localeCompare(b.character)
+        );
+      }
+    }
+
     return NextResponse.json(formattedData);
   } catch (error) {
     console.error("Error fetching data:", error);

@@ -1,4 +1,11 @@
+import { Metadata } from "next";
+
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "REDACTED",
+  description: "MARK RELATION DATA",
+};
 
 async function getData() {
   const res = await fetch("https://solgov.vercel.app/api/sheetdata");
