@@ -3,8 +3,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { FormattedMarkRelations } from "../../types";
 
 const apiKey = "AIzaSyBoNUkHydnkhbi9utB2si8Iv7RBsKOQsm8";
-const spreadsheetId = "19NHUy98-C7Z6Cz97u9F2XpgcbOd_QxBtn2SGMS0E-iE";
-const range = "Manifest!A4:BQ72";
+const spreadsheetId = "1hno1lb8Qr3QIGe_PmqRhRsIDmRqVkVGy20CcfR9IVUU";
+const range = "Manifest!A4";
 
 const valuesUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`;
 
